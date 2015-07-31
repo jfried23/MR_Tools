@@ -81,38 +81,60 @@ class FileReader( object ):
 		self.read_raw()
 		=========================================================  
 		Returns a numpy array containing all the fids in the file.
-		The shape is [npts, pts_in_each_fid].
+		The shape is [npts, pts_in_each_fid]. Use "read" function
+		to order and sort the fids for processing.
 		"""
 		return
 
 
 	def read( self, shp=None,  isr = None ):
-
-		s,r = self.guess_shape()		
-		if shp == None: shp = s
-		if isr == None: isr = r	
-
-		fids = np.empty( shp, dtype='complex')
-
-		shp = np.delete( shp, -1 )
-		indx=[ 0 for i in range(len(shp) ) ]
+		"""
+		self.read( shape = None, is_real = None )
+		=========================================================  
 		
-		for num, f in enumerate(self):
-			for s, dsize in enumerate(shp[::-1]):	
-				num, ans = divmod( num, dsize )
+		Parameters: 
+				shape -- array of type 'int'
+					 describes of the number of dimensions 
+					 in the experiment. Slowest changing
+					 dimension to the fastest.
+					 eg [ ni2, ni1, pts_in_fid]
+					 if 'None' shape from "guess_shape" is used.
 
-				if not isr[s]:
-					if dsize % 2 != 0: raise ValueError
-					off = ans // 2
-					cntr = dsize/2
-
-					if ans % 2 == 0: ans = cntr - off -1
-					else:            ans = cntr + off 
+		              is_real -- array of type 'bool'
+					 describes if a given dimension is real or complex.
+				         if 'False' elements in that dimension will be
+				         sorted as real + imaginary pairs in the output fid.
+	                                 MUST BE SAME LENGTH AS SHAPE.
+					 if 'None', is_real from "guess_shape" is used.
 					
-				indx[s] = int(ans)
+
+		"""
+		s,r = self.guess_shape()
+		
+		if isinstance( shp, type(None) ): 
+			shp = s 
+			print "\nAssuming {0}D experiment, of shape {1}".format( len(shp), shp)
+		if isinstance( isr, type(None) ): 
+			isr = r 
+			key = {True:'Real',False:'Real+Complex'}
+			print "\nAssuming dimensions are {1}\n".format( len(shp), [key[v] for v in isr]) 
+
+		isr = np.delete(isr,-1) #remember last axis is always complex
+
+		f = self.read_raw()
+		f.resize( shp )
+
+		#Go through each axis determin if it is real (True) or real+complex (False)
+		for ax, v in enumerate(isr):
+			if v == True: continue
+			#only sort the complex dimensions
 			
-			indx = indx[::-1]
-			fids[ tuple(indx) ] = f	
+			r_index = range(0,shp[ax],2)
+			i_index = range(1,shp[ax],2)[::-1]
+			
+			rls = np.take(f, r_index, axis=ax)
+			ims = np.take(f, i_index, axis=ax)
 
-		return fids
+			f = np.concatenate( (rls, ims), axis=ax)
 
+		return f

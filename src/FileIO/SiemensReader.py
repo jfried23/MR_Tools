@@ -52,13 +52,19 @@ class SiemensReader( FileReader ):
 
 			self.npts +=1
 
+	def read( self, shp = None, isr = None ):
+		f = FileReader.read( self, shp, isr )
+		f = np.rollaxis( f, -2 )
+		
+		print "\nPlacing channel dimension first. New shape: {0}".format( f.shape ) 
+		
+		return f
+
 	def read_raw( self ):
 		fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=complex )
 		for i,f in enumerate(self): fids[i] = f
 		
-		return fids
-				
-			
+		return fids		
 
 	def guess_shape( self ):
 		"""
@@ -75,8 +81,6 @@ class SiemensReader( FileReader ):
 		shape  = np.array([ k2, k1, chns, k0 ],dtype=int)
 		is_real = [ True, False, True, False ]	
 		return shape, is_real
-
-
 
 
 class SiemensHeaderObj( object ):
@@ -133,15 +137,26 @@ if __name__ == '__main__':
 	path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID99_Gre_2D_TD_ref_12ms_9d_FID25622.dat'  
 
 	
-	from matplotlib.pyplot import imshow, plot, show
+	import matplotlib.pyplot as plt
 	from numpy import fft
 	import numpy	
+	import seaborn
+	from skimage import feature
 
 	s = SiemensReader(path)
 	f = s.read()
 
-	imshow( abs(fft.fftshift(fft.fft2(f[0,:,20]))) )
-	show()
+	img = abs(fft.fftshift(fft.fft2(f[18,0])))
+	plt.imshow( img, cmap = plt.cm.gray )
+	plt.show()
+	
+	#print np.squeeze(f).shape
+
+	#print f.shape	
+	##edges1 = feature.canny(img, sigma=.5)
+	
+	#plt.imshow( f[22, 0], cmap = plt.cm.gray )
+	#plt.show()
 
 	#img = s.images()
 	#print shape(img)
