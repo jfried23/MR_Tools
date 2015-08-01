@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../../../')
 
-import src.util.Gamma
+import util.Gamma
 import numpy as np
 import scipy as sp
 import math
@@ -17,7 +17,7 @@ class PulseElemBase( object ):
 		self._B1    = np.atleast_1d( B1_in_Hz )      #Magnitude of B1  in units 'Hz'
 		self._o     = np.atleast_1d( offset)         #Offset           in units 'Hz'
 		self._phase = np.atleast_1d( phase_in_deg)   #Phase            in units 'rad'    
-		self._gamma = src.util.Gamma.gamma_MHz[ atm ]	
+		self._gamma = util.Gamma.gamma_MHz[ atm ]	
 		self._counter=0
 		self._npts = max( map(len, [self._t, self._B1, self._o, self._phase]))
 

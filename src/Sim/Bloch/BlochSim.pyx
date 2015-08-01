@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../src/')
+sys.path.append('../../')
 
 import numpy as np
 import scipy as sp
@@ -18,15 +18,15 @@ import numpy as np
 import PulseSeq.PulseElem
 import PulseSeq.PulseSeq
 
-import src.Spin
-import src.util.Gamma
+import Sim.Spin
+import util.Gamma
 
 
 
 class BlochSim( object ):
 
 	def __init__( self, *arg, float B0 = 9.4 ):
-		if not all( isinstance(i, src.Spin.Spin) for i in arg): 
+		if not all( isinstance(i, Sim.Spin.Spin) for i in arg): 
 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
 		
 		self.__B0      = B0

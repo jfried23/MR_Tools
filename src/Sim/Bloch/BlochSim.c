@@ -257,8 +257,8 @@ class __Pyx_FakeReference {
 #define _USE_MATH_DEFINES
 #endif
 #include <math.h>
-#define __PYX_HAVE__src__Bloch__BlochSim
-#define __PYX_HAVE_API__src__Bloch__BlochSim
+#define __PYX_HAVE__src__Sim__Bloch__BlochSim
+#define __PYX_HAVE_API__src__Sim__Bloch__BlochSim
 #include "string.h"
 #include "stdio.h"
 #include "stdlib.h"
@@ -474,7 +474,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/Bloch/BlochSim.pyx",
+  "src/Sim/Bloch/BlochSim.pyx",
   "__init__.pxd",
   "type.pxd",
 };
@@ -724,8 +724,8 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
 
 /*--- Type declarations ---*/
-struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__;
-struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr;
+struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__;
+struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr;
 
 /* "../../../../../Library/Python/2.7/site-packages/Cython/Includes/numpy/__init__.pxd":765
  * ctypedef npy_longdouble longdouble_t
@@ -763,29 +763,29 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "src/Bloch/BlochSim.pyx":28
+/* "src/Sim/Bloch/BlochSim.pyx":28
  * class BlochSim( object ):
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):             # <<<<<<<<<<<<<<
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  */
-struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ {
+struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ {
   PyObject_HEAD
   PyObject *__pyx_v_arg;
 };
 
 
-/* "src/Bloch/BlochSim.pyx":29
+/* "src/Sim/Bloch/BlochSim.pyx":29
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):             # <<<<<<<<<<<<<<
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):             # <<<<<<<<<<<<<<
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  * 
  */
-struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr {
+struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr {
   PyObject_HEAD
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *__pyx_outer_scope;
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *__pyx_outer_scope;
   PyObject *__pyx_v_i;
   PyObject *__pyx_t_0;
   Py_ssize_t __pyx_t_1;
@@ -1311,29 +1311,29 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, cha
 
 /* Module declarations from 'cython' */
 
-/* Module declarations from 'src.Bloch.BlochSim' */
-static PyTypeObject *__pyx_ptype_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ = 0;
-static PyTypeObject *__pyx_ptype_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = 0;
+/* Module declarations from 'src.Sim.Bloch.BlochSim' */
+static PyTypeObject *__pyx_ptype_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ = 0;
+static PyTypeObject *__pyx_ptype_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = 0;
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t = { "float64_t", NULL, sizeof(__pyx_t_5numpy_float64_t), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "src.Bloch.BlochSim"
-int __pyx_module_is_main_src__Bloch__BlochSim = 0;
+#define __Pyx_MODULE_NAME "src.Sim.Bloch.BlochSim"
+int __pyx_module_is_main_src__Sim__Bloch__BlochSim = 0;
 
-/* Implementation of 'src.Bloch.BlochSim' */
+/* Implementation of 'src.Sim.Bloch.BlochSim' */
 static PyObject *__pyx_builtin_object;
 static PyObject *__pyx_builtin_all;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_sum;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_RuntimeError;
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_B0, PyObject *__pyx_v_arg); /* proto */
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_frm, PyObject *__pyx_v_to, PyObject *__pyx_v_kex); /* proto */
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulse); /* proto */
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulseSeq); /* proto */
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_B0, PyObject *__pyx_v_arg); /* proto */
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_frm, PyObject *__pyx_v_to, PyObject *__pyx_v_kex); /* proto */
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulse); /* proto */
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulseSeq); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
-static PyObject *__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct____init__(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static char __pyx_k_B[] = "B";
 static char __pyx_k_H[] = "H";
 static char __pyx_k_I[] = "I";
@@ -1365,6 +1365,7 @@ static char __pyx_k_R2[] = "R2";
 static char __pyx_k_Zd[] = "Zd";
 static char __pyx_k_Zf[] = "Zf";
 static char __pyx_k_Zg[] = "Zg";
+static char __pyx_k__8[] = "../../";
 static char __pyx_k_dM[] = "dM";
 static char __pyx_k_dw[] = "dw";
 static char __pyx_k_ii[] = "ii";
@@ -1378,6 +1379,7 @@ static char __pyx_k_sz[] = "sz";
 static char __pyx_k_to[] = "to";
 static char __pyx_k_x0[] = "x0";
 static char __pyx_k_Acq[] = "Acq";
+static char __pyx_k_Sim[] = "Sim";
 static char __pyx_k_all[] = "all";
 static char __pyx_k_arg[] = "arg";
 static char __pyx_k_doc[] = "__doc__";
@@ -1385,7 +1387,6 @@ static char __pyx_k_dot[] = "dot";
 static char __pyx_k_frm[] = "frm";
 static char __pyx_k_kex[] = "kex";
 static char __pyx_k_run[] = "run";
-static char __pyx_k_src[] = "src";
 static char __pyx_k_sum[] = "sum";
 static char __pyx_k_sys[] = "sys";
 static char __pyx_k_Spin[] = "Spin";
@@ -1399,6 +1400,7 @@ static char __pyx_k_path[] = "path";
 static char __pyx_k_self[] = "self";
 static char __pyx_k_send[] = "send";
 static char __pyx_k_test[] = "__test__";
+static char __pyx_k_util[] = "util";
 static char __pyx_k_close[] = "close";
 static char __pyx_k_dtype[] = "dtype";
 static char __pyx_k_float[] = "float";
@@ -1407,7 +1409,6 @@ static char __pyx_k_numpy[] = "numpy";
 static char __pyx_k_pulse[] = "pulse";
 static char __pyx_k_range[] = "range";
 static char __pyx_k_scipy[] = "scipy";
-static char __pyx_k_src_2[] = "../../src/";
 static char __pyx_k_throw[] = "throw";
 static char __pyx_k_zeros[] = "zeros";
 static char __pyx_k_append[] = "append";
@@ -1421,13 +1422,14 @@ static char __pyx_k_prepare[] = "__prepare__";
 static char __pyx_k_squeeze[] = "squeeze";
 static char __pyx_k_BlochSim[] = "BlochSim";
 static char __pyx_k_PulseSeq[] = "PulseSeq";
+static char __pyx_k_Sim_Spin[] = "Sim.Spin";
 static char __pyx_k_identity[] = "identity";
 static char __pyx_k_pulseSeq[] = "pulseSeq";
 static char __pyx_k_qualname[] = "__qualname__";
-static char __pyx_k_src_Spin[] = "src.Spin";
 static char __pyx_k_PulseElem[] = "PulseElem";
 static char __pyx_k_metaclass[] = "__metaclass__";
 static char __pyx_k_ValueError[] = "ValueError";
+static char __pyx_k_util_Gamma[] = "util.Gamma";
 static char __pyx_k_BlochSim_dM[] = "BlochSim.dM";
 static char __pyx_k_concatenate[] = "concatenate";
 static char __pyx_k_BlochSim__B0[] = "_BlochSim__B0";
@@ -1435,16 +1437,15 @@ static char __pyx_k_BlochSim_run[] = "BlochSim.run";
 static char __pyx_k_RuntimeError[] = "RuntimeError";
 static char __pyx_k_scipy_linalg[] = "scipy.linalg";
 static char __pyx_k_BlochSim__Rmtx[] = "_BlochSim__Rmtx";
-static char __pyx_k_src_util_Gamma[] = "src.util.Gamma";
 static char __pyx_k_BlochSim___init[] = "BlochSim.__init__";
 static char __pyx_k_BlochSim__spins[] = "_BlochSim__spins";
 static char __pyx_k_BlochSim_add_kex[] = "BlochSim.add_kex";
 static char __pyx_k_PulseSeq_PulseSeq[] = "PulseSeq.PulseSeq";
 static char __pyx_k_PulseSeq_PulseElem[] = "PulseSeq.PulseElem";
-static char __pyx_k_src_Bloch_BlochSim[] = "src.Bloch.BlochSim";
+static char __pyx_k_src_Sim_Bloch_BlochSim[] = "src.Sim.Bloch.BlochSim";
 static char __pyx_k_ndarray_is_not_C_contiguous[] = "ndarray is not C contiguous";
 static char __pyx_k_A_Non_spin_object_was_passed_to[] = "A Non-spin object was passed to the BlochSim Constructor!";
-static char __pyx_k_Users_josh_Documents_Programs_S[] = "/Users/josh/Documents/Programs/Sim/src/Bloch/BlochSim.pyx";
+static char __pyx_k_Users_josh_Documents_Programs_M[] = "/Users/josh/Documents/Programs/MR_Tools/src/Sim/Bloch/BlochSim.pyx";
 static char __pyx_k_unknown_dtype_code_in_numpy_pxd[] = "unknown dtype code in numpy.pxd (%d)";
 static char __pyx_k_BlochSim___init___locals_genexpr[] = "BlochSim.__init__.<locals>.genexpr";
 static char __pyx_k_Format_string_allocated_too_shor[] = "Format string allocated too short, see comment in numpy.pxd";
@@ -1477,9 +1478,12 @@ static PyObject *__pyx_n_s_PulseSeq_PulseSeq;
 static PyObject *__pyx_n_s_R1;
 static PyObject *__pyx_n_s_R2;
 static PyObject *__pyx_n_s_RuntimeError;
+static PyObject *__pyx_n_s_Sim;
+static PyObject *__pyx_n_s_Sim_Spin;
 static PyObject *__pyx_n_s_Spin;
-static PyObject *__pyx_kp_s_Users_josh_Documents_Programs_S;
+static PyObject *__pyx_kp_s_Users_josh_Documents_Programs_M;
 static PyObject *__pyx_n_s_ValueError;
+static PyObject *__pyx_kp_s__8;
 static PyObject *__pyx_n_s_add_kex;
 static PyObject *__pyx_n_s_all;
 static PyObject *__pyx_n_s_append;
@@ -1534,11 +1538,7 @@ static PyObject *__pyx_n_s_self;
 static PyObject *__pyx_n_s_send;
 static PyObject *__pyx_n_s_sp;
 static PyObject *__pyx_n_s_squeeze;
-static PyObject *__pyx_n_s_src;
-static PyObject *__pyx_kp_s_src_2;
-static PyObject *__pyx_n_s_src_Bloch_BlochSim;
-static PyObject *__pyx_n_s_src_Spin;
-static PyObject *__pyx_n_s_src_util_Gamma;
+static PyObject *__pyx_n_s_src_Sim_Bloch_BlochSim;
 static PyObject *__pyx_n_s_sum;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_sz;
@@ -1546,6 +1546,8 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_throw;
 static PyObject *__pyx_n_s_to;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
+static PyObject *__pyx_n_s_util;
+static PyObject *__pyx_n_s_util_Gamma;
 static PyObject *__pyx_n_s_v;
 static PyObject *__pyx_n_s_w;
 static PyObject *__pyx_n_s_x;
@@ -1566,27 +1568,27 @@ static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__7;
-static PyObject *__pyx_tuple__8;
-static PyObject *__pyx_tuple__10;
-static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__14;
-static PyObject *__pyx_codeobj__9;
-static PyObject *__pyx_codeobj__11;
-static PyObject *__pyx_codeobj__13;
-static PyObject *__pyx_codeobj__15;
+static PyObject *__pyx_tuple__9;
+static PyObject *__pyx_tuple__11;
+static PyObject *__pyx_tuple__13;
+static PyObject *__pyx_tuple__15;
+static PyObject *__pyx_codeobj__10;
+static PyObject *__pyx_codeobj__12;
+static PyObject *__pyx_codeobj__14;
+static PyObject *__pyx_codeobj__16;
 
-/* "src/Bloch/BlochSim.pyx":28
+/* "src/Sim/Bloch/BlochSim.pyx":28
  * class BlochSim( object ):
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):             # <<<<<<<<<<<<<<
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_1__init__ = {"__init__", (PyCFunction)__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_1__init__ = {"__init__", (PyCFunction)__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_B0;
   PyObject *__pyx_v_arg = 0;
@@ -1649,46 +1651,46 @@ static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_1__init__(PyObject *__
   __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 1, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_CLEAR(__pyx_v_arg);
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(__pyx_self, __pyx_v_self, __pyx_v_B0, __pyx_v_arg);
+  __pyx_r = __pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim___init__(__pyx_self, __pyx_v_self, __pyx_v_B0, __pyx_v_arg);
 
   /* function exit code */
   __Pyx_XDECREF(__pyx_v_arg);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_3src_5Bloch_8BlochSim_8BlochSim_8__init___2generator(__pyx_GeneratorObject *__pyx_generator, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_3src_3Sim_5Bloch_8BlochSim_8BlochSim_8__init___2generator(__pyx_GeneratorObject *__pyx_generator, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/Bloch/BlochSim.pyx":29
+/* "src/Sim/Bloch/BlochSim.pyx":29
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):             # <<<<<<<<<<<<<<
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):             # <<<<<<<<<<<<<<
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  * 
  */
 
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(PyObject *__pyx_self) {
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(PyObject *__pyx_self) {
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("genexpr", 0);
-  __pyx_cur_scope = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(__pyx_ptype_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)__pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(__pyx_ptype_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
     __Pyx_RefNannyFinishContext();
     return NULL;
   }
   __Pyx_GOTREF(__pyx_cur_scope);
-  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *) __pyx_self;
+  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *) __pyx_self;
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_GeneratorObject *gen = __Pyx_Generator_New((__pyx_generator_body_t) __pyx_gb_3src_5Bloch_8BlochSim_8BlochSim_8__init___2generator, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_BlochSim___init___locals_genexpr); if (unlikely(!gen)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_GeneratorObject *gen = __Pyx_Generator_New((__pyx_generator_body_t) __pyx_gb_3src_3Sim_5Bloch_8BlochSim_8BlochSim_8__init___2generator, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_BlochSim___init___locals_genexpr); if (unlikely(!gen)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -1696,7 +1698,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(PyOb
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.__init__.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.__init__.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -1704,9 +1706,9 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(PyOb
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_3src_5Bloch_8BlochSim_8BlochSim_8__init___2generator(__pyx_GeneratorObject *__pyx_generator, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_3src_3Sim_5Bloch_8BlochSim_8BlochSim_8__init___2generator(__pyx_GeneratorObject *__pyx_generator, PyObject *__pyx_sent_value) /* generator body */
 {
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
@@ -1745,7 +1747,7 @@ static PyObject *__pyx_gb_3src_5Bloch_8BlochSim_8BlochSim_8__init___2generator(_
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_i, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_src); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_Sim); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Spin); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
@@ -1792,16 +1794,16 @@ static PyObject *__pyx_gb_3src_5Bloch_8BlochSim_8BlochSim_8__init___2generator(_
   return NULL;
 }
 
-/* "src/Bloch/BlochSim.pyx":28
+/* "src/Sim/Bloch/BlochSim.pyx":28
  * class BlochSim( object ):
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):             # <<<<<<<<<<<<<<
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  */
 
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_B0, PyObject *__pyx_v_arg) {
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *__pyx_cur_scope;
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_B0, PyObject *__pyx_v_arg) {
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1815,7 +1817,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
-  __pyx_cur_scope = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *)__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct____init__(__pyx_ptype_3src_5Bloch_8BlochSim___pyx_scope_struct____init__, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *)__pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__(__pyx_ptype_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
     __Pyx_RefNannyFinishContext();
     return NULL;
@@ -1825,14 +1827,14 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_arg);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_arg);
 
-  /* "src/Bloch/BlochSim.pyx":29
+  /* "src/Sim/Bloch/BlochSim.pyx":29
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):             # <<<<<<<<<<<<<<
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):             # <<<<<<<<<<<<<<
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  * 
  */
-  __pyx_t_1 = __pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_8__init___genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
@@ -1847,9 +1849,9 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   __pyx_t_4 = ((!__pyx_t_3) != 0);
   if (__pyx_t_4) {
 
-    /* "src/Bloch/BlochSim.pyx":30
+    /* "src/Sim/Bloch/BlochSim.pyx":30
  * 	def __init__( self, *arg, float B0 = 9.4 ):
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")             # <<<<<<<<<<<<<<
  * 
  * 		self.__B0      = B0
@@ -1861,7 +1863,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "src/Bloch/BlochSim.pyx":32
+  /* "src/Sim/Bloch/BlochSim.pyx":32
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  * 
  * 		self.__B0      = B0             # <<<<<<<<<<<<<<
@@ -1873,7 +1875,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BlochSim__B0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":33
+  /* "src/Sim/Bloch/BlochSim.pyx":33
  * 
  * 		self.__B0      = B0
  * 		self.__spins   = arg             # <<<<<<<<<<<<<<
@@ -1882,7 +1884,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BlochSim__spins, __pyx_cur_scope->__pyx_v_arg) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "src/Bloch/BlochSim.pyx":34
+  /* "src/Sim/Bloch/BlochSim.pyx":34
  * 		self.__B0      = B0
  * 		self.__spins   = arg
  * 		self.__Rmtx    = np.zeros( (len(arg),len(arg) ), dtype='float' )             # <<<<<<<<<<<<<<
@@ -1938,11 +1940,11 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BlochSim__Rmtx, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":28
+  /* "src/Sim/Bloch/BlochSim.pyx":28
  * class BlochSim( object ):
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):             # <<<<<<<<<<<<<<
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  */
 
@@ -1954,7 +1956,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
@@ -1963,7 +1965,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "src/Bloch/BlochSim.pyx":37
+/* "src/Sim/Bloch/BlochSim.pyx":37
  * 
  * 
  * 	def add_kex(self, frm, to, kex ):             # <<<<<<<<<<<<<<
@@ -1972,9 +1974,9 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim___init__(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_3add_kex(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_3add_kex = {"add_kex", (PyCFunction)__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_3add_kex, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_3add_kex(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_3add_kex(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_3add_kex = {"add_kex", (PyCFunction)__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_3add_kex, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_3add_kex(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_frm = 0;
   PyObject *__pyx_v_to = 0;
@@ -2040,18 +2042,18 @@ static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_3add_kex(PyObject *__p
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("add_kex", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.add_kex", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.add_kex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(__pyx_self, __pyx_v_self, __pyx_v_frm, __pyx_v_to, __pyx_v_kex);
+  __pyx_r = __pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_2add_kex(__pyx_self, __pyx_v_self, __pyx_v_frm, __pyx_v_to, __pyx_v_kex);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_frm, PyObject *__pyx_v_to, PyObject *__pyx_v_kex) {
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_frm, PyObject *__pyx_v_to, PyObject *__pyx_v_kex) {
   PyObject *__pyx_v_cfct = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2065,7 +2067,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_INCREF(__pyx_v_frm);
   __Pyx_INCREF(__pyx_v_to);
 
-  /* "src/Bloch/BlochSim.pyx":39
+  /* "src/Sim/Bloch/BlochSim.pyx":39
  * 	def add_kex(self, frm, to, kex ):
  * 
  * 		frm, to = frm-1, to-1             # <<<<<<<<<<<<<<
@@ -2081,7 +2083,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF_SET(__pyx_v_to, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":41
+  /* "src/Sim/Bloch/BlochSim.pyx":41
  * 		frm, to = frm-1, to-1
  * 
  * 		cfct =  (self.__spins[frm]).c/(self.__spins[to]).c             # <<<<<<<<<<<<<<
@@ -2111,7 +2113,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __pyx_v_cfct = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":43
+  /* "src/Sim/Bloch/BlochSim.pyx":43
  * 		cfct =  (self.__spins[frm]).c/(self.__spins[to]).c
  * 
  * 		self.__Rmtx[frm,to]= kex/( 1. + cfct )             # <<<<<<<<<<<<<<
@@ -2138,7 +2140,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":44
+  /* "src/Sim/Bloch/BlochSim.pyx":44
  * 
  * 		self.__Rmtx[frm,to]= kex/( 1. + cfct )
  * 		self.__Rmtx[to,frm]= kex - self.__Rmtx[frm,to]             # <<<<<<<<<<<<<<
@@ -2177,7 +2179,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":46
+  /* "src/Sim/Bloch/BlochSim.pyx":46
  * 		self.__Rmtx[to,frm]= kex - self.__Rmtx[frm,to]
  * 
  * 		self.__Rmtx[frm,frm] = 0.0             # <<<<<<<<<<<<<<
@@ -2198,7 +2200,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":47
+  /* "src/Sim/Bloch/BlochSim.pyx":47
  * 
  * 		self.__Rmtx[frm,frm] = 0.0
  * 		self.__Rmtx[to, to ] = 0.0             # <<<<<<<<<<<<<<
@@ -2219,7 +2221,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":48
+  /* "src/Sim/Bloch/BlochSim.pyx":48
  * 		self.__Rmtx[frm,frm] = 0.0
  * 		self.__Rmtx[to, to ] = 0.0
  * 		self.__Rmtx[frm,frm] = sum( self.__Rmtx[frm] )             # <<<<<<<<<<<<<<
@@ -2254,7 +2256,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":49
+  /* "src/Sim/Bloch/BlochSim.pyx":49
  * 		self.__Rmtx[to, to ] = 0.0
  * 		self.__Rmtx[frm,frm] = sum( self.__Rmtx[frm] )
  * 		self.__Rmtx[to, to ] = sum( self.__Rmtx[to ] )             # <<<<<<<<<<<<<<
@@ -2289,7 +2291,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":37
+  /* "src/Sim/Bloch/BlochSim.pyx":37
  * 
  * 
  * 	def add_kex(self, frm, to, kex ):             # <<<<<<<<<<<<<<
@@ -2304,7 +2306,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.add_kex", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.add_kex", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_cfct);
@@ -2315,7 +2317,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "src/Bloch/BlochSim.pyx":52
+/* "src/Sim/Bloch/BlochSim.pyx":52
  * 
  * 	@cython.boundscheck(False)
  * 	def dM( self, object pulse ):             # <<<<<<<<<<<<<<
@@ -2324,9 +2326,9 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_2add_kex(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_5dM(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_5dM = {"dM", (PyCFunction)__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_5dM, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_5dM(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_5dM(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_5dM = {"dM", (PyCFunction)__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_5dM, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_5dM(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_pulse = 0;
   int __pyx_lineno = 0;
@@ -2374,18 +2376,18 @@ static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_5dM(PyObject *__pyx_se
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("dM", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.dM", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.dM", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(__pyx_self, __pyx_v_self, __pyx_v_pulse);
+  __pyx_r = __pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_4dM(__pyx_self, __pyx_v_self, __pyx_v_pulse);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulse) {
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulse) {
   int __pyx_v_sz;
   int __pyx_v_i;
   int __pyx_v_ii;
@@ -2458,7 +2460,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
   __pyx_pybuffernd_dM.data = NULL;
   __pyx_pybuffernd_dM.rcbuffer = &__pyx_pybuffer_dM;
 
-  /* "src/Bloch/BlochSim.pyx":57
+  /* "src/Sim/Bloch/BlochSim.pyx":57
  * 		cdef np.ndarray[np.float64_t, ndim=2] dM
  * 
  * 		sz = len( self.__spins)             # <<<<<<<<<<<<<<
@@ -2471,7 +2473,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_sz = __pyx_t_2;
 
-  /* "src/Bloch/BlochSim.pyx":58
+  /* "src/Sim/Bloch/BlochSim.pyx":58
  * 
  * 		sz = len( self.__spins)
  * 		dM  = np.zeros( ( 3*sz+1, 3*sz+1) ) #the transformation matrix             # <<<<<<<<<<<<<<
@@ -2543,7 +2545,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
   __pyx_v_dM = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":60
+  /* "src/Sim/Bloch/BlochSim.pyx":60
  * 		dM  = np.zeros( ( 3*sz+1, 3*sz+1) ) #the transformation matrix
  * 
  * 		for i in range(sz):             # <<<<<<<<<<<<<<
@@ -2554,7 +2556,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
   for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_8; __pyx_t_12+=1) {
     __pyx_v_i = __pyx_t_12;
 
-    /* "src/Bloch/BlochSim.pyx":61
+    /* "src/Sim/Bloch/BlochSim.pyx":61
  * 
  * 		for i in range(sz):
  * 			x = (3*(i))             # <<<<<<<<<<<<<<
@@ -2563,7 +2565,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
     __pyx_v_x = (3 * __pyx_v_i);
 
-    /* "src/Bloch/BlochSim.pyx":62
+    /* "src/Sim/Bloch/BlochSim.pyx":62
  * 		for i in range(sz):
  * 			x = (3*(i))
  * 			y = (3*(i))+1             # <<<<<<<<<<<<<<
@@ -2572,7 +2574,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
     __pyx_v_y = ((3 * __pyx_v_i) + 1);
 
-    /* "src/Bloch/BlochSim.pyx":63
+    /* "src/Sim/Bloch/BlochSim.pyx":63
  * 			x = (3*(i))
  * 			y = (3*(i))+1
  * 			z = (3*(i))+2             # <<<<<<<<<<<<<<
@@ -2581,7 +2583,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
     __pyx_v_z = ((3 * __pyx_v_i) + 2);
 
-    /* "src/Bloch/BlochSim.pyx":65
+    /* "src/Sim/Bloch/BlochSim.pyx":65
  * 			z = (3*(i))+2
  * 
  * 			w  = (self.__spins[i]).x0 * (self.__spins[i]).gamma * self.__B0             # <<<<<<<<<<<<<<
@@ -2618,7 +2620,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_w = __pyx_t_13;
 
-    /* "src/Bloch/BlochSim.pyx":66
+    /* "src/Sim/Bloch/BlochSim.pyx":66
  * 
  * 			w  = (self.__spins[i]).x0 * (self.__spins[i]).gamma * self.__B0
  * 			R1 = (self.__spins[i]).R1             # <<<<<<<<<<<<<<
@@ -2637,7 +2639,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_R1 = __pyx_t_13;
 
-    /* "src/Bloch/BlochSim.pyx":67
+    /* "src/Sim/Bloch/BlochSim.pyx":67
  * 			w  = (self.__spins[i]).x0 * (self.__spins[i]).gamma * self.__B0
  * 			R1 = (self.__spins[i]).R1
  * 			R2 = (self.__spins[i]).R2             # <<<<<<<<<<<<<<
@@ -2656,7 +2658,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_R2 = __pyx_t_13;
 
-    /* "src/Bloch/BlochSim.pyx":68
+    /* "src/Sim/Bloch/BlochSim.pyx":68
  * 			R1 = (self.__spins[i]).R1
  * 			R2 = (self.__spins[i]).R2
  * 			c  = (self.__spins[i]).c             # <<<<<<<<<<<<<<
@@ -2675,7 +2677,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_c = __pyx_t_13;
 
-    /* "src/Bloch/BlochSim.pyx":70
+    /* "src/Sim/Bloch/BlochSim.pyx":70
  * 			c  = (self.__spins[i]).c
  * 
  * 			if pulse.gamma  == (self.__spins[i]).gamma:             # <<<<<<<<<<<<<<
@@ -2699,7 +2701,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (__pyx_t_14) {
 
-      /* "src/Bloch/BlochSim.pyx":71
+      /* "src/Sim/Bloch/BlochSim.pyx":71
  * 
  * 			if pulse.gamma  == (self.__spins[i]).gamma:
  * 				B1 = 2 * math.pi * pulse.B1             # <<<<<<<<<<<<<<
@@ -2723,7 +2725,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
       __Pyx_XDECREF_SET(__pyx_v_B1, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "src/Bloch/BlochSim.pyx":72
+      /* "src/Sim/Bloch/BlochSim.pyx":72
  * 			if pulse.gamma  == (self.__spins[i]).gamma:
  * 				B1 = 2 * math.pi * pulse.B1
  * 				dw = pulse.offset             # <<<<<<<<<<<<<<
@@ -2738,7 +2740,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     }
     /*else*/ {
 
-      /* "src/Bloch/BlochSim.pyx":74
+      /* "src/Sim/Bloch/BlochSim.pyx":74
  * 				dw = pulse.offset
  * 			else:
  * 				B1 = [0.0, 0.0]             # <<<<<<<<<<<<<<
@@ -2756,7 +2758,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
       __Pyx_XDECREF_SET(__pyx_v_B1, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "src/Bloch/BlochSim.pyx":75
+      /* "src/Sim/Bloch/BlochSim.pyx":75
  * 			else:
  * 				B1 = [0.0, 0.0]
  * 				dw = 0.0             # <<<<<<<<<<<<<<
@@ -2768,7 +2770,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     }
     __pyx_L5:;
 
-    /* "src/Bloch/BlochSim.pyx":78
+    /* "src/Sim/Bloch/BlochSim.pyx":78
  * 
  * 			# Terms describing spin under influence of B0 & B1
  * 			dM[x,x] = -( R2 + self.__Rmtx[i,i] )             # <<<<<<<<<<<<<<
@@ -2810,7 +2812,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_17 < 0) __pyx_t_17 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_16, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_17, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":79
+    /* "src/Sim/Bloch/BlochSim.pyx":79
  * 			# Terms describing spin under influence of B0 & B1
  * 			dM[x,x] = -( R2 + self.__Rmtx[i,i] )
  * 			dM[x,y] = -2*math.pi*( w - dw )             # <<<<<<<<<<<<<<
@@ -2842,7 +2844,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_19 < 0) __pyx_t_19 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_18, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_19, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":80
+    /* "src/Sim/Bloch/BlochSim.pyx":80
  * 			dM[x,x] = -( R2 + self.__Rmtx[i,i] )
  * 			dM[x,y] = -2*math.pi*( w - dw )
  * 			dM[x,z] =  B1[1]             # <<<<<<<<<<<<<<
@@ -2859,7 +2861,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_21 < 0) __pyx_t_21 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_20, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_21, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":82
+    /* "src/Sim/Bloch/BlochSim.pyx":82
  * 			dM[x,z] =  B1[1]
  * 
  * 			dM[y,y] = -( R2 + self.__Rmtx[i,i] )             # <<<<<<<<<<<<<<
@@ -2901,7 +2903,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_23 < 0) __pyx_t_23 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_22, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_23, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":83
+    /* "src/Sim/Bloch/BlochSim.pyx":83
  * 
  * 			dM[y,y] = -( R2 + self.__Rmtx[i,i] )
  * 			dM[y,x] =  2*math.pi*( w - dw )             # <<<<<<<<<<<<<<
@@ -2933,7 +2935,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_25 < 0) __pyx_t_25 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_25, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":84
+    /* "src/Sim/Bloch/BlochSim.pyx":84
  * 			dM[y,y] = -( R2 + self.__Rmtx[i,i] )
  * 			dM[y,x] =  2*math.pi*( w - dw )
  * 			dM[y,z] = -B1[0]             # <<<<<<<<<<<<<<
@@ -2953,7 +2955,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_27 < 0) __pyx_t_27 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_27, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":86
+    /* "src/Sim/Bloch/BlochSim.pyx":86
  * 			dM[y,z] = -B1[0]
  * 
  * 			dM[z,z] = -(R1 + self.__Rmtx[i,i] )             # <<<<<<<<<<<<<<
@@ -2995,7 +2997,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_29 < 0) __pyx_t_29 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_28, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_29, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":87
+    /* "src/Sim/Bloch/BlochSim.pyx":87
  * 
  * 			dM[z,z] = -(R1 + self.__Rmtx[i,i] )
  * 			dM[z,x] = -B1[1]             # <<<<<<<<<<<<<<
@@ -3015,7 +3017,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_31 < 0) __pyx_t_31 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_30, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_31, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":88
+    /* "src/Sim/Bloch/BlochSim.pyx":88
  * 			dM[z,z] = -(R1 + self.__Rmtx[i,i] )
  * 			dM[z,x] = -B1[1]
  * 			dM[z,y] =  B1[0]             # <<<<<<<<<<<<<<
@@ -3032,7 +3034,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_33 < 0) __pyx_t_33 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_32, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_33, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-    /* "src/Bloch/BlochSim.pyx":90
+    /* "src/Sim/Bloch/BlochSim.pyx":90
  * 			dM[z,y] =  B1[0]
  * 
  * 			dM[z,-1]=  c*R1             # <<<<<<<<<<<<<<
@@ -3045,7 +3047,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     if (__pyx_t_35 < 0) __pyx_t_35 += __pyx_pybuffernd_dM.diminfo[1].shape;
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_34, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_35, __pyx_pybuffernd_dM.diminfo[1].strides) = (__pyx_v_c * __pyx_v_R1);
 
-    /* "src/Bloch/BlochSim.pyx":94
+    /* "src/Sim/Bloch/BlochSim.pyx":94
  * 
  * 			#Terms describing kex between spins
  * 			for ii in range(sz):             # <<<<<<<<<<<<<<
@@ -3056,7 +3058,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     for (__pyx_t_37 = 0; __pyx_t_37 < __pyx_t_36; __pyx_t_37+=1) {
       __pyx_v_ii = __pyx_t_37;
 
-      /* "src/Bloch/BlochSim.pyx":95
+      /* "src/Sim/Bloch/BlochSim.pyx":95
  * 			#Terms describing kex between spins
  * 			for ii in range(sz):
  * 				if ii == i: continue             # <<<<<<<<<<<<<<
@@ -3068,7 +3070,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
         goto __pyx_L6_continue;
       }
 
-      /* "src/Bloch/BlochSim.pyx":97
+      /* "src/Sim/Bloch/BlochSim.pyx":97
  * 				if ii == i: continue
  * 
  * 				ox = (3*ii)             # <<<<<<<<<<<<<<
@@ -3077,7 +3079,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
       __pyx_v_ox = (3 * __pyx_v_ii);
 
-      /* "src/Bloch/BlochSim.pyx":98
+      /* "src/Sim/Bloch/BlochSim.pyx":98
  * 
  * 				ox = (3*ii)
  * 				oy = (3*ii)+1             # <<<<<<<<<<<<<<
@@ -3086,7 +3088,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
       __pyx_v_oy = ((3 * __pyx_v_ii) + 1);
 
-      /* "src/Bloch/BlochSim.pyx":99
+      /* "src/Sim/Bloch/BlochSim.pyx":99
  * 				ox = (3*ii)
  * 				oy = (3*ii)+1
  * 				oz = (3*ii)+2             # <<<<<<<<<<<<<<
@@ -3095,7 +3097,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
       __pyx_v_oz = ((3 * __pyx_v_ii) + 2);
 
-      /* "src/Bloch/BlochSim.pyx":101
+      /* "src/Sim/Bloch/BlochSim.pyx":101
  * 				oz = (3*ii)+2
  * 
  * 				dM[ox, x] = self.__Rmtx[i,ii]             # <<<<<<<<<<<<<<
@@ -3128,7 +3130,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
       if (__pyx_t_39 < 0) __pyx_t_39 += __pyx_pybuffernd_dM.diminfo[1].shape;
       *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_39, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-      /* "src/Bloch/BlochSim.pyx":102
+      /* "src/Sim/Bloch/BlochSim.pyx":102
  * 
  * 				dM[ox, x] = self.__Rmtx[i,ii]
  * 				dM[oy, y] = self.__Rmtx[i,ii]             # <<<<<<<<<<<<<<
@@ -3161,7 +3163,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
       if (__pyx_t_41 < 0) __pyx_t_41 += __pyx_pybuffernd_dM.diminfo[1].shape;
       *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_dM.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_dM.diminfo[0].strides, __pyx_t_41, __pyx_pybuffernd_dM.diminfo[1].strides) = __pyx_t_15;
 
-      /* "src/Bloch/BlochSim.pyx":103
+      /* "src/Sim/Bloch/BlochSim.pyx":103
  * 				dM[ox, x] = self.__Rmtx[i,ii]
  * 				dM[oy, y] = self.__Rmtx[i,ii]
  * 				dM[oz, z] = self.__Rmtx[i,ii]             # <<<<<<<<<<<<<<
@@ -3197,7 +3199,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     }
   }
 
-  /* "src/Bloch/BlochSim.pyx":105
+  /* "src/Sim/Bloch/BlochSim.pyx":105
  * 				dM[oz, z] = self.__Rmtx[i,ii]
  * 
  * 		return dM             # <<<<<<<<<<<<<<
@@ -3209,7 +3211,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
   __pyx_r = ((PyObject *)__pyx_v_dM);
   goto __pyx_L0;
 
-  /* "src/Bloch/BlochSim.pyx":52
+  /* "src/Sim/Bloch/BlochSim.pyx":52
  * 
  * 	@cython.boundscheck(False)
  * 	def dM( self, object pulse ):             # <<<<<<<<<<<<<<
@@ -3228,7 +3230,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dM.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.dM", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.dM", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3242,7 +3244,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
   return __pyx_r;
 }
 
-/* "src/Bloch/BlochSim.pyx":109
+/* "src/Sim/Bloch/BlochSim.pyx":109
  * 
  * 	@cython.boundscheck(False)
  * 	def run( self, object pulseSeq ):             # <<<<<<<<<<<<<<
@@ -3251,9 +3253,9 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_4dM(CYTHON_UNUSED PyOb
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_7run(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_7run = {"run", (PyCFunction)__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_7run, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_7run(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_7run(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_7run = {"run", (PyCFunction)__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_7run, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3src_3Sim_5Bloch_8BlochSim_8BlochSim_7run(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_pulseSeq = 0;
   int __pyx_lineno = 0;
@@ -3301,18 +3303,18 @@ static PyObject *__pyx_pw_3src_5Bloch_8BlochSim_8BlochSim_7run(PyObject *__pyx_s
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("run", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(__pyx_self, __pyx_v_self, __pyx_v_pulseSeq);
+  __pyx_r = __pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_6run(__pyx_self, __pyx_v_self, __pyx_v_pulseSeq);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulseSeq) {
+static PyObject *__pyx_pf_3src_3Sim_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_pulseSeq) {
   PyArrayObject *__pyx_v_I0 = 0;
   CYTHON_UNUSED PyArrayObject *__pyx_v_M = 0;
   PyArrayObject *__pyx_v_I = 0;
@@ -3363,7 +3365,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __pyx_pybuffernd_I.data = NULL;
   __pyx_pybuffernd_I.rcbuffer = &__pyx_pybuffer_I;
 
-  /* "src/Bloch/BlochSim.pyx":115
+  /* "src/Sim/Bloch/BlochSim.pyx":115
  * 		cdef int sz, i
  * 
  * 		I0 = np.concatenate( [ s.v for s in self.__spins] )             # <<<<<<<<<<<<<<
@@ -3475,7 +3477,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __pyx_v_I0 = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":116
+  /* "src/Sim/Bloch/BlochSim.pyx":116
  * 
  * 		I0 = np.concatenate( [ s.v for s in self.__spins] )
  * 		I0 = np.concatenate( (I0,[1.0]))             # <<<<<<<<<<<<<<
@@ -3548,7 +3550,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __Pyx_DECREF_SET(__pyx_v_I0, ((PyArrayObject *)__pyx_t_1));
   __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":118
+  /* "src/Sim/Bloch/BlochSim.pyx":118
  * 		I0 = np.concatenate( (I0,[1.0]))
  * 
  * 		sz = len( self.__spins)             # <<<<<<<<<<<<<<
@@ -3561,7 +3563,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_sz = __pyx_t_6;
 
-  /* "src/Bloch/BlochSim.pyx":120
+  /* "src/Sim/Bloch/BlochSim.pyx":120
  * 		sz = len( self.__spins)
  * 
  * 		I = np.zeros( (pulseSeq.ncyc, 	3*sz+1) )             # <<<<<<<<<<<<<<
@@ -3633,7 +3635,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __pyx_v_I = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":122
+  /* "src/Sim/Bloch/BlochSim.pyx":122
  * 		I = np.zeros( (pulseSeq.ncyc, 	3*sz+1) )
  * 
  * 		M = np.identity( 3*sz+1 )             # <<<<<<<<<<<<<<
@@ -3695,7 +3697,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __pyx_v_M = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":125
+  /* "src/Sim/Bloch/BlochSim.pyx":125
  * 
  * 
  * 		i=0             # <<<<<<<<<<<<<<
@@ -3704,7 +3706,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
  */
   __pyx_v_i = 0;
 
-  /* "src/Bloch/BlochSim.pyx":126
+  /* "src/Sim/Bloch/BlochSim.pyx":126
  * 
  * 		i=0
  * 		for p in pulseSeq:             # <<<<<<<<<<<<<<
@@ -3753,7 +3755,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
     __Pyx_XDECREF_SET(__pyx_v_p, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "src/Bloch/BlochSim.pyx":128
+    /* "src/Sim/Bloch/BlochSim.pyx":128
  * 		for p in pulseSeq:
  * 
  * 			I0 = (p.M(self)).dot( I0 )             # <<<<<<<<<<<<<<
@@ -3837,12 +3839,12 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
     __Pyx_DECREF_SET(__pyx_v_I0, ((PyArrayObject *)__pyx_t_4));
     __pyx_t_4 = 0;
 
-    /* "src/Bloch/BlochSim.pyx":130
+    /* "src/Sim/Bloch/BlochSim.pyx":130
  * 			I0 = (p.M(self)).dot( I0 )
  * 
  * 			if isinstance( p,  PulseSeq.PulseElem.Acq ):             # <<<<<<<<<<<<<<
  * 				I[i] = I0
- * 				I0 = np.concatenate( [ s.v for s in self.__spins] )
+ * 
  */
     __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_PulseSeq); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
@@ -3857,38 +3859,38 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
     __pyx_t_16 = (__pyx_t_15 != 0);
     if (__pyx_t_16) {
 
-      /* "src/Bloch/BlochSim.pyx":131
+      /* "src/Sim/Bloch/BlochSim.pyx":131
  * 
  * 			if isinstance( p,  PulseSeq.PulseElem.Acq ):
  * 				I[i] = I0             # <<<<<<<<<<<<<<
- * 				I0 = np.concatenate( [ s.v for s in self.__spins] )
- * 				I0 = np.concatenate( (I0,[1.0]))
+ * 
+ * 				#reset I0
  */
       if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_I), __pyx_v_i, ((PyObject *)__pyx_v_I0), int, 1, __Pyx_PyInt_From_int, 0, 1, 0) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "src/Bloch/BlochSim.pyx":132
- * 			if isinstance( p,  PulseSeq.PulseElem.Acq ):
- * 				I[i] = I0
+      /* "src/Sim/Bloch/BlochSim.pyx":134
+ * 
+ * 				#reset I0
  * 				I0 = np.concatenate( [ s.v for s in self.__spins] )             # <<<<<<<<<<<<<<
  * 				I0 = np.concatenate( (I0,[1.0]))
  * 
  */
-      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_concatenate); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_concatenate); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BlochSim__spins); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BlochSim__spins); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
       if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
         __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3); __pyx_t_17 = 0;
         __pyx_t_18 = NULL;
       } else {
-        __pyx_t_17 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_17 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_18 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_18 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       for (;;) {
@@ -3896,17 +3898,17 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
           if (likely(PyList_CheckExact(__pyx_t_3))) {
             if (__pyx_t_17 >= PyList_GET_SIZE(__pyx_t_3)) break;
             #if CYTHON_COMPILING_IN_CPYTHON
-            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_17); __Pyx_INCREF(__pyx_t_2); __pyx_t_17++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_17); __Pyx_INCREF(__pyx_t_2); __pyx_t_17++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #else
-            __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_2);
             #endif
           } else {
             if (__pyx_t_17 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
             #if CYTHON_COMPILING_IN_CPYTHON
-            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_17); __Pyx_INCREF(__pyx_t_2); __pyx_t_17++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_17); __Pyx_INCREF(__pyx_t_2); __pyx_t_17++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #else
-            __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_2);
             #endif
           }
@@ -3916,7 +3918,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             }
             break;
           }
@@ -3924,9 +3926,9 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
         }
         __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_2);
         __pyx_t_2 = 0;
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_5, (PyObject*)__pyx_t_2))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_5, (PyObject*)__pyx_t_2))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3941,22 +3943,22 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
         }
       }
       if (!__pyx_t_3) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3); __pyx_t_3 = NULL;
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_t_5);
         __pyx_t_5 = 0;
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_8 = ((PyArrayObject *)__pyx_t_4);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3972,30 +3974,30 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
           }
         }
         __pyx_pybuffernd_I0.diminfo[0].strides = __pyx_pybuffernd_I0.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_I0.diminfo[0].shape = __pyx_pybuffernd_I0.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __pyx_t_8 = 0;
       __Pyx_DECREF_SET(__pyx_v_I0, ((PyArrayObject *)__pyx_t_4));
       __pyx_t_4 = 0;
 
-      /* "src/Bloch/BlochSim.pyx":133
- * 				I[i] = I0
+      /* "src/Sim/Bloch/BlochSim.pyx":135
+ * 				#reset I0
  * 				I0 = np.concatenate( [ s.v for s in self.__spins] )
  * 				I0 = np.concatenate( (I0,[1.0]))             # <<<<<<<<<<<<<<
  * 
  * 				i+=1
  */
-      __pyx_t_14 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_14 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_concatenate); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_14, __pyx_n_s_concatenate); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_14 = PyList_New(1); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_14 = PyList_New(1); if (unlikely(!__pyx_t_14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_INCREF(__pyx_float_1_0);
       __Pyx_GIVEREF(__pyx_float_1_0);
       PyList_SET_ITEM(__pyx_t_14, 0, __pyx_float_1_0);
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_INCREF(((PyObject *)__pyx_v_I0));
       __Pyx_GIVEREF(((PyObject *)__pyx_v_I0));
@@ -4014,22 +4016,22 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
         }
       }
       if (!__pyx_t_14) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_14); __pyx_t_14 = NULL;
         __Pyx_GIVEREF(__pyx_t_5);
         PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_t_5);
         __pyx_t_5 = 0;
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_8 = ((PyArrayObject *)__pyx_t_4);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4045,13 +4047,13 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
           }
         }
         __pyx_pybuffernd_I0.diminfo[0].strides = __pyx_pybuffernd_I0.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_I0.diminfo[0].shape = __pyx_pybuffernd_I0.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __pyx_t_8 = 0;
       __Pyx_DECREF_SET(__pyx_v_I0, ((PyArrayObject *)__pyx_t_4));
       __pyx_t_4 = 0;
 
-      /* "src/Bloch/BlochSim.pyx":135
+      /* "src/Sim/Bloch/BlochSim.pyx":137
  * 				I0 = np.concatenate( (I0,[1.0]))
  * 
  * 				i+=1             # <<<<<<<<<<<<<<
@@ -4063,7 +4065,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
     }
     __pyx_L7:;
 
-    /* "src/Bloch/BlochSim.pyx":126
+    /* "src/Sim/Bloch/BlochSim.pyx":126
  * 
  * 		i=0
  * 		for p in pulseSeq:             # <<<<<<<<<<<<<<
@@ -4073,15 +4075,15 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":137
+  /* "src/Sim/Bloch/BlochSim.pyx":139
  * 				i+=1
  * 
  * 		return np.squeeze(I)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_squeeze); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_squeeze); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -4095,16 +4097,16 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_I)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_I)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4); __pyx_t_4 = NULL;
     __Pyx_INCREF(((PyObject *)__pyx_v_I));
     __Pyx_GIVEREF(((PyObject *)__pyx_v_I));
     PyTuple_SET_ITEM(__pyx_t_3, 0+1, ((PyObject *)__pyx_v_I));
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -4113,7 +4115,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/Bloch/BlochSim.pyx":109
+  /* "src/Sim/Bloch/BlochSim.pyx":109
  * 
  * 	@cython.boundscheck(False)
  * 	def run( self, object pulseSeq ):             # <<<<<<<<<<<<<<
@@ -4135,7 +4137,7 @@ static PyObject *__pyx_pf_3src_5Bloch_8BlochSim_8BlochSim_6run(CYTHON_UNUSED PyO
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_I0.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_M.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("src.Bloch.BlochSim.BlochSim.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("src.Sim.Bloch.BlochSim.BlochSim.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -6156,14 +6158,14 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-static struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *__pyx_freelist_3src_5Bloch_8BlochSim___pyx_scope_struct____init__[8];
-static int __pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ = 0;
+static struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *__pyx_freelist_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__[8];
+static int __pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ = 0;
 
-static PyObject *__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct____init__(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__)))) {
-    o = (PyObject*)__pyx_freelist_3src_5Bloch_8BlochSim___pyx_scope_struct____init__[--__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct____init__];
-    memset(o, 0, sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__)))) {
+    o = (PyObject*)__pyx_freelist_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__[--__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__];
+    memset(o, 0, sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -6173,41 +6175,41 @@ static PyObject *__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct____init__
   return o;
 }
 
-static void __pyx_tp_dealloc_3src_5Bloch_8BlochSim___pyx_scope_struct____init__(PyObject *o) {
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *p = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o;
+static void __pyx_tp_dealloc_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__(PyObject *o) {
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *p = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_arg);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__)))) {
-    __pyx_freelist_3src_5Bloch_8BlochSim___pyx_scope_struct____init__[__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct____init__++] = ((struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__)))) {
+    __pyx_freelist_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__[__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__++] = ((struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_3src_5Bloch_8BlochSim___pyx_scope_struct____init__(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *p = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o;
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *p = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o;
   if (p->__pyx_v_arg) {
     e = (*v)(p->__pyx_v_arg, a); if (e) return e;
   }
   return 0;
 }
 
-static int __pyx_tp_clear_3src_5Bloch_8BlochSim___pyx_scope_struct____init__(PyObject *o) {
+static int __pyx_tp_clear_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *p = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o;
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *p = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *)o;
   tmp = ((PyObject*)p->__pyx_v_arg);
   p->__pyx_v_arg = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
-static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ = {
+static PyTypeObject __pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ = {
   PyVarObject_HEAD_INIT(0, 0)
-  "src.Bloch.BlochSim.__pyx_scope_struct____init__", /*tp_name*/
-  sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__), /*tp_basicsize*/
+  "src.Sim.Bloch.BlochSim.__pyx_scope_struct____init__", /*tp_name*/
+  sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_3src_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_dealloc*/
+  __pyx_tp_dealloc_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6228,8 +6230,8 @@ static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init_
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_3src_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_traverse*/
-  __pyx_tp_clear_3src_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_clear*/
+  __pyx_tp_traverse_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_traverse*/
+  __pyx_tp_clear_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -6244,7 +6246,7 @@ static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init_
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_new*/
+  __pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6259,14 +6261,14 @@ static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init_
   #endif
 };
 
-static struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *__pyx_freelist_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr[8];
-static int __pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = 0;
+static struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *__pyx_freelist_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr[8];
+static int __pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = 0;
 
-static PyObject *__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr)))) {
-    o = (PyObject*)__pyx_freelist_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr[--__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr];
-    memset(o, 0, sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr)))) {
+    o = (PyObject*)__pyx_freelist_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr[--__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr];
+    memset(o, 0, sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -6276,22 +6278,22 @@ static PyObject *__pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr
   return o;
 }
 
-static void __pyx_tp_dealloc_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyObject *o) {
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o;
+static void __pyx_tp_dealloc_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyObject *o) {
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_outer_scope);
   Py_CLEAR(p->__pyx_v_i);
   Py_CLEAR(p->__pyx_t_0);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr)))) {
-    __pyx_freelist_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr[__pyx_freecount_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr)))) {
+    __pyx_freelist_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr[__pyx_freecount_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o;
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o;
   if (p->__pyx_outer_scope) {
     e = (*v)(((PyObject*)p->__pyx_outer_scope), a); if (e) return e;
   }
@@ -6304,11 +6306,11 @@ static int __pyx_tp_traverse_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(
   return 0;
 }
 
-static int __pyx_tp_clear_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyObject *o) {
+static int __pyx_tp_clear_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o;
+  struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr *)o;
   tmp = ((PyObject*)p->__pyx_outer_scope);
-  p->__pyx_outer_scope = ((struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ *)Py_None); Py_INCREF(Py_None);
+  p->__pyx_outer_scope = ((struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ *)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   tmp = ((PyObject*)p->__pyx_v_i);
   p->__pyx_v_i = Py_None; Py_INCREF(Py_None);
@@ -6319,12 +6321,12 @@ static int __pyx_tp_clear_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr(PyO
   return 0;
 }
 
-static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = {
+static PyTypeObject __pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = {
   PyVarObject_HEAD_INIT(0, 0)
-  "src.Bloch.BlochSim.__pyx_scope_struct_1_genexpr", /*tp_name*/
-  sizeof(struct __pyx_obj_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
+  "src.Sim.Bloch.BlochSim.__pyx_scope_struct_1_genexpr", /*tp_name*/
+  sizeof(struct __pyx_obj_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
+  __pyx_tp_dealloc_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -6345,8 +6347,8 @@ static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexp
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_traverse*/
-  __pyx_tp_clear_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_clear*/
+  __pyx_tp_traverse_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_traverse*/
+  __pyx_tp_clear_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -6361,7 +6363,7 @@ static PyTypeObject __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexp
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_new*/
+  __pyx_tp_new_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6425,9 +6427,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_R1, __pyx_k_R1, sizeof(__pyx_k_R1), 0, 0, 1, 1},
   {&__pyx_n_s_R2, __pyx_k_R2, sizeof(__pyx_k_R2), 0, 0, 1, 1},
   {&__pyx_n_s_RuntimeError, __pyx_k_RuntimeError, sizeof(__pyx_k_RuntimeError), 0, 0, 1, 1},
+  {&__pyx_n_s_Sim, __pyx_k_Sim, sizeof(__pyx_k_Sim), 0, 0, 1, 1},
+  {&__pyx_n_s_Sim_Spin, __pyx_k_Sim_Spin, sizeof(__pyx_k_Sim_Spin), 0, 0, 1, 1},
   {&__pyx_n_s_Spin, __pyx_k_Spin, sizeof(__pyx_k_Spin), 0, 0, 1, 1},
-  {&__pyx_kp_s_Users_josh_Documents_Programs_S, __pyx_k_Users_josh_Documents_Programs_S, sizeof(__pyx_k_Users_josh_Documents_Programs_S), 0, 0, 1, 0},
+  {&__pyx_kp_s_Users_josh_Documents_Programs_M, __pyx_k_Users_josh_Documents_Programs_M, sizeof(__pyx_k_Users_josh_Documents_Programs_M), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
+  {&__pyx_kp_s__8, __pyx_k__8, sizeof(__pyx_k__8), 0, 0, 1, 0},
   {&__pyx_n_s_add_kex, __pyx_k_add_kex, sizeof(__pyx_k_add_kex), 0, 0, 1, 1},
   {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
   {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
@@ -6482,11 +6487,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_send, __pyx_k_send, sizeof(__pyx_k_send), 0, 0, 1, 1},
   {&__pyx_n_s_sp, __pyx_k_sp, sizeof(__pyx_k_sp), 0, 0, 1, 1},
   {&__pyx_n_s_squeeze, __pyx_k_squeeze, sizeof(__pyx_k_squeeze), 0, 0, 1, 1},
-  {&__pyx_n_s_src, __pyx_k_src, sizeof(__pyx_k_src), 0, 0, 1, 1},
-  {&__pyx_kp_s_src_2, __pyx_k_src_2, sizeof(__pyx_k_src_2), 0, 0, 1, 0},
-  {&__pyx_n_s_src_Bloch_BlochSim, __pyx_k_src_Bloch_BlochSim, sizeof(__pyx_k_src_Bloch_BlochSim), 0, 0, 1, 1},
-  {&__pyx_n_s_src_Spin, __pyx_k_src_Spin, sizeof(__pyx_k_src_Spin), 0, 0, 1, 1},
-  {&__pyx_n_s_src_util_Gamma, __pyx_k_src_util_Gamma, sizeof(__pyx_k_src_util_Gamma), 0, 0, 1, 1},
+  {&__pyx_n_s_src_Sim_Bloch_BlochSim, __pyx_k_src_Sim_Bloch_BlochSim, sizeof(__pyx_k_src_Sim_Bloch_BlochSim), 0, 0, 1, 1},
   {&__pyx_n_s_sum, __pyx_k_sum, sizeof(__pyx_k_sum), 0, 0, 1, 1},
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_sz, __pyx_k_sz, sizeof(__pyx_k_sz), 0, 0, 1, 1},
@@ -6494,6 +6495,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_throw, __pyx_k_throw, sizeof(__pyx_k_throw), 0, 0, 1, 1},
   {&__pyx_n_s_to, __pyx_k_to, sizeof(__pyx_k_to), 0, 0, 1, 1},
   {&__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_k_unknown_dtype_code_in_numpy_pxd, sizeof(__pyx_k_unknown_dtype_code_in_numpy_pxd), 0, 1, 0, 0},
+  {&__pyx_n_s_util, __pyx_k_util, sizeof(__pyx_k_util), 0, 0, 1, 1},
+  {&__pyx_n_s_util_Gamma, __pyx_k_util_Gamma, sizeof(__pyx_k_util_Gamma), 0, 0, 1, 1},
   {&__pyx_n_s_v, __pyx_k_v, sizeof(__pyx_k_v), 0, 0, 1, 1},
   {&__pyx_n_s_w, __pyx_k_w, sizeof(__pyx_k_w), 0, 0, 1, 1},
   {&__pyx_n_s_x, __pyx_k_x, sizeof(__pyx_k_x), 0, 0, 1, 1},
@@ -6519,9 +6522,9 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "src/Bloch/BlochSim.pyx":30
+  /* "src/Sim/Bloch/BlochSim.pyx":30
  * 	def __init__( self, *arg, float B0 = 9.4 ):
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")             # <<<<<<<<<<<<<<
  * 
  * 		self.__B0      = B0
@@ -6596,53 +6599,53 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "src/Bloch/BlochSim.pyx":28
+  /* "src/Sim/Bloch/BlochSim.pyx":28
  * class BlochSim( object ):
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):             # <<<<<<<<<<<<<<
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  */
-  __pyx_tuple__8 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_B0, __pyx_n_s_arg, __pyx_n_s_genexpr, __pyx_n_s_genexpr); if (unlikely(!__pyx_tuple__8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 1, 5, 0, CO_VARARGS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_S, __pyx_n_s_init, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__9 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_B0, __pyx_n_s_arg, __pyx_n_s_genexpr, __pyx_n_s_genexpr); if (unlikely(!__pyx_tuple__9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 1, 5, 0, CO_VARARGS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_M, __pyx_n_s_init, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "src/Bloch/BlochSim.pyx":37
+  /* "src/Sim/Bloch/BlochSim.pyx":37
  * 
  * 
  * 	def add_kex(self, frm, to, kex ):             # <<<<<<<<<<<<<<
  * 
  * 		frm, to = frm-1, to-1
  */
-  __pyx_tuple__10 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_frm, __pyx_n_s_to, __pyx_n_s_kex, __pyx_n_s_cfct); if (unlikely(!__pyx_tuple__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(4, 0, 5, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_S, __pyx_n_s_add_kex, 37, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__11 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_frm, __pyx_n_s_to, __pyx_n_s_kex, __pyx_n_s_cfct); if (unlikely(!__pyx_tuple__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(4, 0, 5, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_M, __pyx_n_s_add_kex, 37, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "src/Bloch/BlochSim.pyx":52
+  /* "src/Sim/Bloch/BlochSim.pyx":52
  * 
  * 	@cython.boundscheck(False)
  * 	def dM( self, object pulse ):             # <<<<<<<<<<<<<<
  * 		cdef int sz, i, ii, x, y, z
  * 		cdef float w, R1, R2, c
  */
-  __pyx_tuple__12 = PyTuple_Pack(18, __pyx_n_s_self, __pyx_n_s_pulse, __pyx_n_s_sz, __pyx_n_s_i, __pyx_n_s_ii, __pyx_n_s_x, __pyx_n_s_y, __pyx_n_s_z, __pyx_n_s_w, __pyx_n_s_R1, __pyx_n_s_R2, __pyx_n_s_c, __pyx_n_s_dM, __pyx_n_s_B1, __pyx_n_s_dw, __pyx_n_s_ox, __pyx_n_s_oy, __pyx_n_s_oz); if (unlikely(!__pyx_tuple__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(2, 0, 18, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_S, __pyx_n_s_dM, 52, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__13 = PyTuple_Pack(18, __pyx_n_s_self, __pyx_n_s_pulse, __pyx_n_s_sz, __pyx_n_s_i, __pyx_n_s_ii, __pyx_n_s_x, __pyx_n_s_y, __pyx_n_s_z, __pyx_n_s_w, __pyx_n_s_R1, __pyx_n_s_R2, __pyx_n_s_c, __pyx_n_s_dM, __pyx_n_s_B1, __pyx_n_s_dw, __pyx_n_s_ox, __pyx_n_s_oy, __pyx_n_s_oz); if (unlikely(!__pyx_tuple__13)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 18, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_M, __pyx_n_s_dM, 52, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "src/Bloch/BlochSim.pyx":109
+  /* "src/Sim/Bloch/BlochSim.pyx":109
  * 
  * 	@cython.boundscheck(False)
  * 	def run( self, object pulseSeq ):             # <<<<<<<<<<<<<<
  * 
  * 		cdef np.ndarray[np.float64_t, ndim=1] I0
  */
-  __pyx_tuple__14 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_pulseSeq, __pyx_n_s_I0, __pyx_n_s_M, __pyx_n_s_I, __pyx_n_s_sz, __pyx_n_s_i, __pyx_n_s_p, __pyx_n_s_s); if (unlikely(!__pyx_tuple__14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(2, 0, 9, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_S, __pyx_n_s_run, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__15 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_pulseSeq, __pyx_n_s_I0, __pyx_n_s_M, __pyx_n_s_I, __pyx_n_s_sz, __pyx_n_s_i, __pyx_n_s_p, __pyx_n_s_s); if (unlikely(!__pyx_tuple__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(2, 0, 9, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_josh_Documents_Programs_M, __pyx_n_s_run, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6729,14 +6732,14 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
-  if (__pyx_module_is_main_src__Bloch__BlochSim) {
+  if (__pyx_module_is_main_src__Sim__Bloch__BlochSim) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    if (!PyDict_GetItemString(modules, "src.Bloch.BlochSim")) {
-      if (unlikely(PyDict_SetItemString(modules, "src.Bloch.BlochSim", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!PyDict_GetItemString(modules, "src.Sim.Bloch.BlochSim")) {
+      if (unlikely(PyDict_SetItemString(modules, "src.Sim.Bloch.BlochSim", __pyx_m) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
   }
   #endif
@@ -6748,12 +6751,12 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init__) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init__.tp_print = 0;
-  __pyx_ptype_3src_5Bloch_8BlochSim___pyx_scope_struct____init__ = &__pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct____init__;
-  if (PyType_Ready(&__pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr.tp_print = 0;
-  __pyx_ptype_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = &__pyx_type_3src_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr;
+  if (PyType_Ready(&__pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__.tp_print = 0;
+  __pyx_ptype_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__ = &__pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct____init__;
+  if (PyType_Ready(&__pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr.tp_print = 0;
+  __pyx_ptype_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr = &__pyx_type_3src_3Sim_5Bloch_8BlochSim___pyx_scope_struct_1_genexpr;
   /*--- Type import code ---*/
   __pyx_ptype_7cpython_4type_type = __Pyx_ImportType(__Pyx_BUILTIN_MODULE_NAME, "type", 
   #if CYTHON_COMPILING_IN_PYPY
@@ -6771,9 +6774,9 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   /*--- Function import code ---*/
   /*--- Execution code ---*/
 
-  /* "src/Bloch/BlochSim.pyx":1
+  /* "src/Sim/Bloch/BlochSim.pyx":1
  * import sys             # <<<<<<<<<<<<<<
- * sys.path.append('../../src/')
+ * sys.path.append('../../')
  * 
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_sys, 0, -1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -6781,9 +6784,9 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sys, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":2
+  /* "src/Sim/Bloch/BlochSim.pyx":2
  * import sys
- * sys.path.append('../../src/')             # <<<<<<<<<<<<<<
+ * sys.path.append('../../')             # <<<<<<<<<<<<<<
  * 
  * import numpy as np
  */
@@ -6792,11 +6795,11 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 2; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_kp_s_src_2); if (unlikely(__pyx_t_3 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 2; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_kp_s__8); if (unlikely(__pyx_t_3 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 2; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":4
- * sys.path.append('../../src/')
+  /* "src/Sim/Bloch/BlochSim.pyx":4
+ * sys.path.append('../../')
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
  * import scipy as sp
@@ -6807,7 +6810,7 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 4; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":5
+  /* "src/Sim/Bloch/BlochSim.pyx":5
  * 
  * import numpy as np
  * import scipy as sp             # <<<<<<<<<<<<<<
@@ -6819,7 +6822,7 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sp, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 5; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":7
+  /* "src/Sim/Bloch/BlochSim.pyx":7
  * import scipy as sp
  * 
  * import scipy.linalg             # <<<<<<<<<<<<<<
@@ -6831,7 +6834,7 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_scipy, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 7; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":14
+  /* "src/Sim/Bloch/BlochSim.pyx":14
  * cimport cython
  * 
  * import math             # <<<<<<<<<<<<<<
@@ -6843,7 +6846,7 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_math, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 14; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":16
+  /* "src/Sim/Bloch/BlochSim.pyx":16
  * import math
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -6855,7 +6858,7 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 16; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":18
+  /* "src/Sim/Bloch/BlochSim.pyx":18
  * import numpy as np
  * 
  * import PulseSeq.PulseElem             # <<<<<<<<<<<<<<
@@ -6867,43 +6870,43 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_PulseSeq, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":19
+  /* "src/Sim/Bloch/BlochSim.pyx":19
  * 
  * import PulseSeq.PulseElem
  * import PulseSeq.PulseSeq             # <<<<<<<<<<<<<<
  * 
- * import src.Spin
+ * import Sim.Spin
  */
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_PulseSeq_PulseSeq, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_PulseSeq, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":21
+  /* "src/Sim/Bloch/BlochSim.pyx":21
  * import PulseSeq.PulseSeq
  * 
- * import src.Spin             # <<<<<<<<<<<<<<
- * import src.util.Gamma
+ * import Sim.Spin             # <<<<<<<<<<<<<<
+ * import util.Gamma
  * 
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_src_Spin, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_Sim_Spin, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_src, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Sim, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":22
+  /* "src/Sim/Bloch/BlochSim.pyx":22
  * 
- * import src.Spin
- * import src.util.Gamma             # <<<<<<<<<<<<<<
+ * import Sim.Spin
+ * import util.Gamma             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_src_util_Gamma, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_util_Gamma, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_src, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_util, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":26
+  /* "src/Sim/Bloch/BlochSim.pyx":26
  * 
  * 
  * class BlochSim( object ):             # <<<<<<<<<<<<<<
@@ -6917,14 +6920,14 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_builtin_object);
   __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_BlochSim, __pyx_n_s_BlochSim, (PyObject *) NULL, __pyx_n_s_src_Bloch_BlochSim, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_BlochSim, __pyx_n_s_BlochSim, (PyObject *) NULL, __pyx_n_s_src_Sim_Bloch_BlochSim, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "src/Bloch/BlochSim.pyx":28
+  /* "src/Sim/Bloch/BlochSim.pyx":28
  * class BlochSim( object ):
  * 
  * 	def __init__( self, *arg, float B0 = 9.4 ):             # <<<<<<<<<<<<<<
- * 		if not all( isinstance(i, src.Spin.Spin) for i in arg):
+ * 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg):
  * 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
  */
   __pyx_t_5 = PyDict_New(); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -6933,50 +6936,50 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   __Pyx_GOTREF(__pyx_t_6);
   if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_B0, __pyx_t_6) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_1__init__, 0, __pyx_n_s_BlochSim___init, NULL, __pyx_n_s_src_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_1__init__, 0, __pyx_n_s_BlochSim___init, NULL, __pyx_n_s_src_Sim_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetDefaultsKwDict(__pyx_t_6, __pyx_t_5);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_init, __pyx_t_6) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":37
+  /* "src/Sim/Bloch/BlochSim.pyx":37
  * 
  * 
  * 	def add_kex(self, frm, to, kex ):             # <<<<<<<<<<<<<<
  * 
  * 		frm, to = frm-1, to-1
  */
-  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_3add_kex, 0, __pyx_n_s_BlochSim_add_kex, NULL, __pyx_n_s_src_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_3add_kex, 0, __pyx_n_s_BlochSim_add_kex, NULL, __pyx_n_s_src_Sim_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_add_kex, __pyx_t_6) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":52
+  /* "src/Sim/Bloch/BlochSim.pyx":52
  * 
  * 	@cython.boundscheck(False)
  * 	def dM( self, object pulse ):             # <<<<<<<<<<<<<<
  * 		cdef int sz, i, ii, x, y, z
  * 		cdef float w, R1, R2, c
  */
-  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_5dM, 0, __pyx_n_s_BlochSim_dM, NULL, __pyx_n_s_src_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_5dM, 0, __pyx_n_s_BlochSim_dM, NULL, __pyx_n_s_src_Sim_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_dM, __pyx_t_6) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":109
+  /* "src/Sim/Bloch/BlochSim.pyx":109
  * 
  * 	@cython.boundscheck(False)
  * 	def run( self, object pulseSeq ):             # <<<<<<<<<<<<<<
  * 
  * 		cdef np.ndarray[np.float64_t, ndim=1] I0
  */
-  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_5Bloch_8BlochSim_8BlochSim_7run, 0, __pyx_n_s_BlochSim_run, NULL, __pyx_n_s_src_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3src_3Sim_5Bloch_8BlochSim_8BlochSim_7run, 0, __pyx_n_s_BlochSim_run, NULL, __pyx_n_s_src_Sim_Bloch_BlochSim, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_run, __pyx_t_6) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":26
+  /* "src/Sim/Bloch/BlochSim.pyx":26
  * 
  * 
  * class BlochSim( object ):             # <<<<<<<<<<<<<<
@@ -6991,9 +6994,9 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/Bloch/BlochSim.pyx":1
+  /* "src/Sim/Bloch/BlochSim.pyx":1
  * import sys             # <<<<<<<<<<<<<<
- * sys.path.append('../../src/')
+ * sys.path.append('../../')
  * 
  */
   __pyx_t_2 = PyDict_New(); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -7020,11 +7023,11 @@ PyMODINIT_FUNC PyInit_BlochSim(void)
   __Pyx_XDECREF(__pyx_t_6);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init src.Bloch.BlochSim", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init src.Sim.Bloch.BlochSim", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init src.Bloch.BlochSim");
+    PyErr_SetString(PyExc_ImportError, "init src.Sim.Bloch.BlochSim");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

@@ -15,26 +15,9 @@ Derived methods must impliment
 		e.g. 
 			Fastest is size of fid (#complex pts)   nps
 			2nd fastest is ni in 2d dim             ni2
-			3rd fastest is n2 in 3d dim             ni3
-			
+			3rd fastest is n2 in 3d dim             ni3			
 			out should be     [ ni3, ni2, nps]
 
-The method
-	1) sort(self, shape, dtypes)
-		Assembles the fids in the object into the matrix defined by "shape" 
-		(supplied from guess shape only overide if guess is wrong)
-		
-		inputs: 
-		1) shape : an array listing the object dimensions in order of slowest changeing to				  fastest. The fastest, last, dimension should be the number of complex pts
-			   in the fid.
-		2) dtype: an array of length len(shape)-1 containing the keywords 'complex' or 'None'
-			  (the last dimension #pts in fid is assumed to be complex)
-			  If set to complex it assumes points in that dimension are collected as
-			      1st -- real  
-			      2nd -- immg
-			      3rd -- real
-			      ect. 
-			if not just overide this in the concreete class!
 """
 
 class FileReader( object ):
@@ -54,7 +37,7 @@ class FileReader( object ):
 		"""
 		self.__iter__()
 		=========================================================  
-		A generator returning a complex np.array containg each fid in the
+		A generator returning a complex np.array for each fid in the
 		the order it was collected. 
 		"""
 		return
@@ -98,7 +81,7 @@ class FileReader( object ):
 					 in the experiment. Slowest changing
 					 dimension to the fastest.
 					 eg [ ni2, ni1, pts_in_fid]
-					 if 'None' shape from "guess_shape" is used.
+					 if 'None' the shape provided by "guess_shape" is used.
 
 		              is_real -- array of type 'bool'
 					 describes if a given dimension is real or complex.
@@ -106,9 +89,8 @@ class FileReader( object ):
 				         sorted as real + imaginary pairs in the output fid.
 	                                 MUST BE SAME LENGTH AS SHAPE.
 					 if 'None', is_real from "guess_shape" is used.
-					
-
 		"""
+
 		s,r = self.guess_shape()
 		
 		if isinstance( shp, type(None) ): 

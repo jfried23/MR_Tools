@@ -1,4 +1,8 @@
-from util import Gamma 
+import sys
+sys.path.append('../')
+
+import util.Gamma 
+
 from numpy import array
 
 class Spin:
@@ -26,7 +30,7 @@ class Spin:
 		self.__R2   = float(R2)
 		self.__x0  = float(x0) 
 		self.__c    = float(c)
-		self.__gama  = Gamma.gamma_MHz[atm]
+		self.__gama  = util.Gamma.gamma_MHz[atm]
 	
 		self.__v    = array( [0.0, 0.0, self.__c], dtype=float )
 

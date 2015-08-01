@@ -3,7 +3,6 @@ from FileReader import FileReader
 from string import split 
 from math import floor
 
-from numpy import roll, exp, arange, zeros
 from struct import calcsize, unpack
 
 import numpy as np
@@ -11,7 +10,6 @@ import numpy as np
 import os
 import glob
 import struct
-import itertools
 
 
 class BrukerReader( FileReader ):
@@ -97,6 +95,7 @@ class BrukerReader( FileReader ):
 	def guess_shape( self ):
 		v = [ self.acq[k]['TD'] for k in sorted(self.acq.keys())[::-1] ]
 		r = [ True for r in v]
+		r[-1] = False
 		return (v, r )	
 
 
