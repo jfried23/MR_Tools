@@ -12,7 +12,7 @@ class SiemensReader( FileReader ):
 
 		self._glb_header_sz    = struct.unpack( 'I', self.binary.read(struct.calcsize('I')))[0]
 		self._local_header_sz  = 128
-		
+
 		self.binary.seek( self._glb_header_sz )		
 			
 		self.read_headers( )
@@ -42,14 +42,13 @@ class SiemensReader( FileReader ):
 		while self.binary.tell() < self.file_size:
 			hdr = SiemensHeaderObj( self.binary.read( self._local_header_sz ) )
 			self.binary.seek( hdr.samples_in_scan*2*4, 1 )
-
+			
 			if self.npts == 0: 
 				self.pts_in_fid = hdr.samples_in_scan
 				self.hdr = hdr
 
 			if hdr.is_end: break
 			assert(  hdr.samples_in_scan == self.pts_in_fid  )
-
 			self.npts +=1
 
 	def read( self, shp = None, isr = None ):
@@ -63,7 +62,7 @@ class SiemensReader( FileReader ):
 	def read_raw( self ):
 		fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=complex )
 		for i,f in enumerate(self): fids[i] = f
-		
+		self.binary.close()	
 		return fids		
 
 	def guess_shape( self ):
@@ -145,11 +144,12 @@ if __name__ == '__main__':
 
 	s = SiemensReader(path)
 	f = s.read()
-
+	
 	img = abs(fft.fftshift(fft.fft2(f[18,0])))
 	plt.imshow( img, cmap = plt.cm.gray )
 	plt.show()
 	
+
 	#print np.squeeze(f).shape
 
 	#print f.shape	

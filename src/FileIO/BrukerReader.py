@@ -89,6 +89,7 @@ class BrukerReader( FileReader ):
 	def read_raw( self ):
 		fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=complex )
 		for i, f in enumerate(self): fids[i] = f
+		self.binary.close()
 		return fids
 	
 

@@ -135,5 +135,10 @@ class BlochSim( object ):
 				I0 = np.concatenate( (I0,[1.0]))
 
 				i+=1
-	
+
+
+		h = np.array_split( I[:,0:-1], len(self.__spins), axis=1 )
+
+		for sp_num, s in enumerate( self.__spins ): s.history = h[sp_num]
+
 		return np.squeeze(I)
