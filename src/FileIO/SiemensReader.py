@@ -52,18 +52,18 @@ class SiemensReader( FileReader ):
 			self.npts +=1
 
 	def read( self, shp = None, isr = None ):
-		f = FileReader.read( self, shp, isr )
-		f = np.rollaxis( f, -2 )
+		FileReader.read( self, shp, isr )
+		self.fids = np.rollaxis( self.fids, -2 )
 		
-		print "\nPlacing channel dimension first. New shape: {0}".format( f.shape ) 
+		print "\nPlacing channel dimension first. New shape: {0}".format( self.fids.shape ) 
 		
-		return f
+		return self.fids
 
 	def read_raw( self ):
-		fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=complex )
-		for i,f in enumerate(self): fids[i] = f
+		self.fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=complex )
+		for i,f in enumerate(self): self.fids[i] = f
 		self.binary.close()	
-		return fids		
+		return self.fids		
 
 	def guess_shape( self ):
 		"""

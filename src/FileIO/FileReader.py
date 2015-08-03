@@ -29,7 +29,8 @@ class FileReader( object ):
 
 		self.file_size = os.path.getsize(path)
 		self.binary = open( path, 'rb')
-		
+			
+		self.fids = None
 		
 
 	@abc.abstractmethod
@@ -103,8 +104,8 @@ class FileReader( object ):
 
 		isr = np.delete(isr,-1) #remember last axis is always complex
 
-		f = self.read_raw()
-		f.resize( shp )
+		self.read_raw()
+		self.fids.resize( shp )
 
 		#Go through each axis determin if it is real (True) or real+complex (False)
 		for ax, v in enumerate(isr):
@@ -114,9 +115,9 @@ class FileReader( object ):
 			r_index = range(0,shp[ax],2)
 			i_index = range(1,shp[ax],2)[::-1]
 			
-			rls = np.take(f, r_index, axis=ax)
-			ims = np.take(f, i_index, axis=ax)
+			rls = np.take( self.fids, r_index, axis=ax)
+			ims = np.take( self.fids, i_index, axis=ax)
 
-			f = np.concatenate( (rls, ims), axis=ax)
+			self.fids = np.concatenate( (rls, ims), axis=ax)
 
-		return f
+		return self.fids
