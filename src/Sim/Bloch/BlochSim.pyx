@@ -21,8 +21,6 @@ import PulseSeq.PulseSeq
 import Sim.Spin
 import util.Gamma
 
-
-
 class BlochSim( object ):
 
 	def __init__( self, *arg, float B0 = 9.4 ):
@@ -33,7 +31,6 @@ class BlochSim( object ):
 		self.__spins   = arg
 		self.__Rmtx    = np.zeros( (len(arg),len(arg) ), dtype='float' )
 
-	
 	def add_kex(self, frm, to, kex ):
 			
 		frm, to = frm-1, to-1		
@@ -120,7 +117,7 @@ class BlochSim( object ):
 		I = np.zeros( (pulseSeq.ncyc, 	3*sz+1) )	
 
 		M = np.identity( 3*sz+1 )
-
+		
 
 		i=0
 		for p in pulseSeq:
@@ -138,7 +135,9 @@ class BlochSim( object ):
 
 
 		h = np.array_split( I[:,0:-1], len(self.__spins), axis=1 )
-
-		for sp_num, s in enumerate( self.__spins ): s.history = h[sp_num]
+	
+	
+		for sp_num, s in enumerate( self.__spins ):
+			s.history = h[sp_num]
 
 		return np.squeeze(I)

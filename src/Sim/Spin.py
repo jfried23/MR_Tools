@@ -41,7 +41,7 @@ class Spin:
 
 	def __str__( self ):
 		s  = 'Spin object:\n' 	
-		s += '\tGy %f Mhz/T.\n' % (self.gama)   
+		s += '\tGy %f Mhz/T.\n' % (self.gamma)   
 		s += '\tx0 %f ppm.\n' %(self.x0)
 		s += '\tR1:  %f\n\tR2:  %f\n\tc:   %f\n' %(self.R1,self.R2, self.c)
 		s += '\tv=[ %f, %f, %f]\n' %(self.v[0],self.v[1],self.v[2])
