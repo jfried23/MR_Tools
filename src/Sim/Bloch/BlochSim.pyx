@@ -21,16 +21,23 @@ import PulseSeq.PulseSeq
 import Sim.Spin
 import util.Gamma
 
-class BlochSim( object ):
+cdef class BlochSim( object ):
+	cdef np.float __B0
+	cdef tuple __spins
+	cdef np.ndarray  __Rmtx
 
 	def __init__( self, *arg, float B0 = 9.4 ):
 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg): 
 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
 		
+		cdef np.ndarray[np.float, ndim=2] __Rmtx = self.__Rmtx
+
 		self.__B0      = B0
 		self.__spins   = arg
 		self.__Rmtx    = np.zeros( (len(arg),len(arg) ), dtype='float' )
 
+		self.__Rmtx    = np.zeros( (len(arg),len(arg) ), dtype=np.float )
+	
 	def add_kex(self, frm, to, kex ):
 			
 		frm, to = frm-1, to-1		
@@ -46,7 +53,7 @@ class BlochSim( object ):
 		self.__Rmtx[to, to ] = sum( self.__Rmtx[to ] )
 
 	@cython.boundscheck(False) 
-	def dM( self, object pulse ):
+	cpdef np.ndarray[np.float64_t, ndim=2] dM( self, object pulse ):
 		cdef int sz, i, ii, x, y, z
 		cdef float w, R1, R2, c		
 		cdef np.ndarray[np.float64_t, ndim=2] dM
@@ -103,7 +110,7 @@ class BlochSim( object ):
 
 									
 	@cython.boundscheck(False) 
-	def run( self, object pulseSeq ):
+	cpdef run( self, object pulseSeq ):
 		
 		cdef np.ndarray[np.float64_t, ndim=1] I0
 		cdef np.ndarray[np.float64_t, ndim=2] M, I
