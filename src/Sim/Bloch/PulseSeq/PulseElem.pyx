@@ -1,16 +1,21 @@
 import sys
 sys.path.append('../../../')
 
+cimport cython
+cimport numpy as np
+
 import util.Gamma
 import numpy as np
 import scipy as sp
 import math
 
+
 """
 Pulse Elements will not incrament unless/untill self.inc() is expliciatly called.
 """
 
-class PulseElemBase( object ):
+cdef class PulseElemBase( object ):
+
 	def __init__(self, time_in_s, B1_in_Hz, offset, phase_in_deg, atm='1H' ):
 		
 		self._t     = np.atleast_1d( time_in_s)      #Durration        in units 's'
@@ -23,7 +28,7 @@ class PulseElemBase( object ):
 
 		self._M = None
 
-	def M( self, BlochObj ):
+	cpdef np.ndarray[np.float64_t, ndim=2]  M( self, object BlochObj ):
 		if isinstance(self._M, type(None) ): 
 			self._M = sp.linalg.expm( self.time * BlochObj.dM( self ) )
 
@@ -85,6 +90,7 @@ class CompositePulse( PulseElemBase ):
 	"""
 	CompositePulses are a container for multiple Pulse Elements.
 	"""
+
 	def __init__( self ):
 		self._seq  = []	
 		PulseElemBase.__init__(self, 0.0, 0.0, 0.0, 0.0, '1H')
@@ -111,7 +117,7 @@ class CompositePulse( PulseElemBase ):
 
 		self._seq.append( pulse_elem )
 
-		self._t     += pulse_elem.time 
+		#self._t     += pulse_elem.time 
 		self._npts   = max( self._npts, pulse_elem.npts )
 
 class Loop( CompositePulse ):
@@ -147,7 +153,7 @@ class Loop( CompositePulse ):
 
 		self._seq.append( pulse_elem )
 
-		self._t     += pulse_elem.time 
+		#self._t     += pulse_elem.time 
 		self._npts   = max( self._npts, pulse_elem.npts )
 
 
