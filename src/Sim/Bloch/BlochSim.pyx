@@ -7,8 +7,6 @@ import scipy as sp
 import scipy.linalg
 
 cimport numpy as np
-
-
 cimport cython
 
 import math
@@ -21,25 +19,26 @@ import PulseSeq.PulseSeq
 import Sim.Spin
 import util.Gamma
 
+
+ctypedef np.float64_t float_t
+
 cdef class BlochSim( object ):
 	cdef np.float __B0
 	cdef tuple __spins
-	cdef np.ndarray  __Rmtx
+	cdef float_t[:,:] __Rmtx
+
 
 	def __init__( self, *arg, float B0 = 9.4 ):
 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg): 
 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
 		
-		cdef np.ndarray[np.float, ndim=2] __Rmtx = self.__Rmtx
-
 		self.__B0      = B0
 		self.__spins   = arg
-		self.__Rmtx    = np.zeros( (len(arg),len(arg) ), dtype='float' )
+		self.__Rmtx    = np.zeros( (len(arg),len(arg) ) )
 
-		self.__Rmtx    = np.zeros( (len(arg),len(arg) ), dtype=np.float )
+	cpdef add_kex(self, int frm, int to, float kex ):
+		cdef float cfct		
 	
-	def add_kex(self, frm, to, kex ):
-			
 		frm, to = frm-1, to-1		
 		
 		cfct =  (self.__spins[frm]).c/(self.__spins[to]).c 
@@ -51,14 +50,16 @@ cdef class BlochSim( object ):
 		self.__Rmtx[to, to ] = 0.0	
 		self.__Rmtx[frm,frm] = sum( self.__Rmtx[frm] )
 		self.__Rmtx[to, to ] = sum( self.__Rmtx[to ] )
+		
+		
 
 	@cython.boundscheck(False) 
 	cpdef np.ndarray[np.float64_t, ndim=2] dM( self, object pulse ):
 		cdef int sz, i, ii, x, y, z
 		cdef float w, R1, R2, c		
-		cdef np.ndarray[np.float64_t, ndim=2] dM
-		
-		sz = len( self.__spins)
+		cdef np.ndarray[float_t, ndim=2] dM	
+
+		sz = len( self.__spins )
 		dM  = np.zeros( ( 3*sz+1, 3*sz+1) ) #the transformation matrix 
 
 		for i in range(sz): 
@@ -110,10 +111,10 @@ cdef class BlochSim( object ):
 
 									
 	@cython.boundscheck(False) 
-	cpdef run( self, object pulseSeq ):
+	cpdef np.ndarray[np.float64_t, ndim=2] run( self, object pulseSeq ):
 		
 		cdef np.ndarray[np.float64_t, ndim=1] I0
-		cdef np.ndarray[np.float64_t, ndim=2] M, I
+		cdef np.ndarray[float_t, ndim=2] M, I
 		cdef int sz, i
 
 		I0 = np.concatenate( [ s.v for s in self.__spins] )
@@ -147,4 +148,4 @@ cdef class BlochSim( object ):
 		for sp_num, s in enumerate( self.__spins ):
 			s.history = h[sp_num]
 
-		return np.squeeze(I)
+		return I
