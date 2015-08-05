@@ -5,7 +5,7 @@ import scipy
 
 
 setup(
-    ext_modules = cythonize(["./src/Sim/Bloch/BlochSim.pyx","./src/Sim/Bloch/PulseSeq/PulseElem.pyx"]),
+    ext_modules = cythonize(["./src/Sim/Bloch/BlochSim.pyx","./src/Sim/Bloch/PulseSeq/PulseElem.pyx", "./src/Sim/Spin.pyx"]),
     include_dirs=[numpy.get_include()]
 )
 
