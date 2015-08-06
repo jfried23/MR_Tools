@@ -22,8 +22,11 @@ import util.Gamma
 
 
 cdef class BlochSim( object ):
+	cdef float B0
+	cdef tuple spins
+	cdef np.float_t [:,::1] Rmtx
 
-	def __init__( self, *arg, float_t B0 = 9.4 ):
+	def __init__( self, *arg,  B0 = 9.4 ):
 		if not all( isinstance(i, Sim.Spin.Spin) for i in arg): 
 			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
 		
@@ -49,10 +52,10 @@ cdef class BlochSim( object ):
 		
 
 	@cython.boundscheck(False) 
-	cpdef np.ndarray[ float_t, ndim=2]  dM( self, object pulse ):
+	cpdef np.ndarray[ np.float_t, ndim=2] dM( self, object pulse ):
 		cdef int sz, i, ii, x, y, z
 		cdef float w, R1, R2, c		
-		cdef float_t [:,::1] dM	
+		cdef np.ndarray[ np.float_t, ndim=2] dM	
 
 		sz = len( self.spins )
 		dM  = np.zeros( ( 3*sz+1, 3*sz+1) ) #the transformation matrix 
@@ -102,14 +105,14 @@ cdef class BlochSim( object ):
 				dM[oy, y] = self.Rmtx[i,ii]
 				dM[oz, z] = self.Rmtx[i,ii]
 
-		return np.asarray(dM)
+		return dM
 
 									
 	@cython.boundscheck(False) 
-	cpdef np.ndarray[ float_t, ndim=2] run( self, object pulseSeq ):
+	cpdef run( self, object pulseSeq ):
 		
-		cdef np.ndarray[ float_t, ndim=1]  I0
-		cdef np.ndarray[ float_t, ndim=2]  M, I
+		cdef np.ndarray[ np.float_t, ndim=1]  I0
+		cdef np.ndarray[ np.float_t, ndim=2]  M, I
 		cdef int sz, i
 
 		I0 = np.concatenate( [ np.asarray(s.v) for s in self.spins] )
@@ -131,16 +134,16 @@ cdef class BlochSim( object ):
 				I[i,:] = I0
 
 				#reset I0
-				I0 = np.concatenate( [ s.v for s in self.__spins] )
+				I0 = np.concatenate( [ s.v for s in self.spins] )
 				I0 = np.concatenate( (I0,[1.0]))
 
 				i+=1
 
 
-		h = np.array_split( I[:,0:-1], len(self.__spins), axis=1 )
+		h = np.array_split( I[:,0:-1], len(self.spins), axis=1 )
 	
 	
-		for sp_num, s in enumerate( self.__spins ):
+		for sp_num, s in enumerate( self.spins ):
 			s.history = h[sp_num]
 
-		return np.asarray(I)
+		return np.squeeze(I)

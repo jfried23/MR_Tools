@@ -28,7 +28,7 @@ cdef class PulseElemBase( object ):
 
 		self._M = None
 
-	cpdef np.float64_t [:,::1]  M( self, object BlochObj ):
+	cpdef np.ndarray[ np.float_t, ndim=2]  M( self, object BlochObj ):
 		if isinstance(self._M, type(None) ): 
 			self._M = sp.linalg.expm( self.time * BlochObj.dM( self ) )
 

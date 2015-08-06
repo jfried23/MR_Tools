@@ -27,7 +27,7 @@ class SiemensReader( FileReader ):
 			if self.binary.tell() > self.file_size: break
 			self.binary.seek( self._local_header_sz, 1 )	
 			t = np.fromfile( self.binary, dtype=np.float32, count = self.pts_in_fid*2)
-			fid = self.cplx( t[0::2], t[1::2] )
+			fid =  t[0::2] + 1j* t[1::2] 
 			i+=1
 
 			yield fid
@@ -133,7 +133,7 @@ class SiemensHeaderObj( object ):
 if __name__ == '__main__':
 	from SiemensReader import SiemensReader
 	path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID98_Gre_2D_P_delayGauss_10x720d_185V_st2us_FID25621.dat'
-	path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID99_Gre_2D_TD_ref_12ms_9d_FID25622.dat'  
+	#path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID99_Gre_2D_TD_ref_12ms_9d_FID25622.dat'  
 
 	
 	import matplotlib.pyplot as plt

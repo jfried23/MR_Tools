@@ -27,7 +27,7 @@ class Test_Bloch(unittest.TestCase):
 		ps = PulseSeq.PulseSeq()
 		ps.add( PulseElem.Pulse( 1.e-9, 90., 0.) )
 
-		v = b.run( ps )	
+		v = b.run( ps )
 		err = np.linalg.norm( v.T - np.array([ 0.0, -1.0, 0.0, 1.0 ] ) )
 		self.assertAlmostEqual(err, 0, 5)
 
