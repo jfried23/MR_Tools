@@ -7,28 +7,42 @@ from numpy import array
 
 class Spin:
 	"""
-		Spin Class
+	The representation of a Spin species for a MR Simulator.
+	
+	Constructor: Spin( R1, R2, x0, c, atm='1H' )
+
+	User Callable Member Functions
+	------------------------------
+
+	set_lb_ub( str key, float lower_bound, float upper_bound )
+		Sets lower & upper bounds for fitting functions
+	
+	 	
+
+	Paramters
+	----------
+	R1	  : Spin lattice relaxation rate. (Units 1/sec) 
+
+	R2	  : Spin-spin transverse relxation rate. (Units 1/sec)
+
+	x0	  : Chemical shift relative to center of spectra. (Units 1.e-6 Hz -- ppm)
+
+	c	  : The concentration or relative amount of signal (Abitrary units)
+
+	history   : An np array descbing the evolution of the magnitization vector durring BlochSim
+		    hisotry[:,0] --> evolution of x magnitzation
+		    history[:,1] --> evolution of y magnitzation
+		    history[:,3] --> evolution of z magnitzation
+ 
+	__bounds  : A dictionary mapping the fitting parameters to tuples of
+		    (lower_bound, upper_bound) 
 		
-		A contaniner for representing a single Spin 
-		
-		history gets set by a Bloch simulation object
-		self.history[0] = complex array of transverse magnitization
-				  [ [ x + iy]_1
-				    [ x + iy]_2
-				     ...
-				    [ x + iy]_n
-				  ]
-		self.history[1] = float of z magnitization
-				  [ array_1
-				    array_2
-				     ...
-				    array_n
-                                   ] 
 	"""
-	def __init__(self, R1, R2, x0, c, atm='1H'):
+
+	def __init__(self, R1=0, R2=0, x0=0, c=1, atm='1H'):
 		self.__R1   = float(R1)
 		self.__R2   = float(R2)
-		self.__x0  = float(x0) 
+		self.__x0   = float(x0) 
 		self.__c    = float(c)
 		self.__gama  = util.Gamma.gamma_MHz[atm]
 	
@@ -49,7 +63,7 @@ class Spin:
 
 	
 	def set_lb_ub( self, key, lb = None, ub = None ):
-		if key not in self.__bounds.key(): raise ValueError
+		if key not in self.__bounds: raise ValueError
 		self.__bounds[key] = ( lb, ub )	
 
 	def get_opt_vals( self ):
@@ -64,16 +78,16 @@ class Spin:
 			else: raise ValueError 
 		return x
 
-	def set_obt_vals( self, vals ):
+	def set_opt_vals( self, vals ):
 		i=0
 		for key in sorted(self.__bounds):
 			if self.__bounds[key] == None: continue
 			
-			elif   key == 'R1': self.__R1 = vals[i]
-			elif   key == 'R2': self.__R2 = vals[i]
-			elif   key == 'x0': self.__x0 = vals[i]
+			elif   key == 'R1': self.__R1 = vals.pop(0)
+			elif   key == 'R2': self.__R2 = vals.pop(0)
+			elif   key == 'x0': self.__x0 = vals.pop(0)
 			elif   key == 'c' : 
-				self.__c    = vals[i]
+				self.__c    = vals.pop(0)
 				self.__v    = array( [0.0, 0.0, self.__c], dtype=float )
 			else: raise ValueError
 			i+=1
@@ -84,8 +98,6 @@ class Spin:
 			if self.__bounds[key] != None: bounds.append( self.__bounds[ key ] )
 		return bounds
 	
-
-
 
 	#Getters
 	@property
@@ -103,5 +115,17 @@ class Spin:
 
 if __name__ == '__main__':
 	h=Spin(1,1,3.5, 30)
+	
+	h.set_lb_ub( 'R2', 0.0, 200. )
+
+	print h.get_opt_vals()
+	print h.get_opt_limits()
+
+	new=range(10)
+	new[0]=-8
+
+	h.set_opt_vals( new )
+
 	print h
-	print h.v
+
+	print new
