@@ -23,7 +23,7 @@ class Test_Bloch(unittest.TestCase):
 
 	def test_90(self):
 		s1 = Spin.Spin(1.0, 1.0, 2.0, 1.0)
-		b  = BlochSim.BlochSim( s1 )	
+		b  = BlochSim.BlochSim(  s1, B0=9.4 )	
 		ps = PulseSeq.PulseSeq()
 		ps.add( PulseElem.Pulse( 1.e-9, 90., 0.) )
 
@@ -44,7 +44,7 @@ class Test_Bloch(unittest.TestCase):
 
 		s1=Spin.Spin(r1, r2, 4.0, c)
 
-		b=BlochSim.BlochSim( s1, B0=9.5 )	
+		b=BlochSim.BlochSim( s1, B0= 9.4 )	
 					
 		ps = PulseSeq.PulseSeq()
 		ps.add( PulseElem.Pulse( 1.e-9, 180., 0.) )
@@ -68,7 +68,7 @@ class Test_Bloch(unittest.TestCase):
 		c   =  2.0
 
 		s1=Spin.Spin(r1, r2, 0.0, c)
-		b=BlochSim.BlochSim( s1, B0=9.5 )
+		b=BlochSim.BlochSim( s1, B0= 9.4 )
 
 		ps = PulseSeq.PulseSeq()
 		ps.add( PulseElem.Pulse( 1.e-9, 90., 90.) )
@@ -97,7 +97,7 @@ class Test_Bloch(unittest.TestCase):
 		w = B0*self.g*ppm
 
 		s1=Spin.Spin(r1, r2, ppm, c)
-		b=BlochSim.BlochSim( s1, B0=B0 )
+		b=BlochSim.BlochSim(  s1, B0 = B0 )
 
 		ps = PulseSeq.PulseSeq()
 		ps.add( PulseElem.Pulse( 1.e-9, 90., 90.) )
@@ -128,7 +128,7 @@ class Test_Bloch(unittest.TestCase):
 		s1=Spin.Spin(1.7,1.0, ppm, 1.0)
 		s2=Spin.Spin(1.7,2.0, 0.0, 1.0)
 		
-		b=BlochSim.BlochSim( s1,s2, B0 = B0 )		
+		b=BlochSim.BlochSim( s1, s2, B0= 9.4 )		
 
 		ps = PulseSeq.PulseSeq()
 

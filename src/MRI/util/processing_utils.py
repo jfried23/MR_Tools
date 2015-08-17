@@ -1,4 +1,5 @@
 import numpy as np
+from skimage import filters
 
 def process_sum_square( fids, ndim=2  ):
 	"""
@@ -24,7 +25,7 @@ def process_sum_square( fids, ndim=2  ):
 	img = process( fids, ndim)
 	img *= np.conj(img) 
 	
-	return np.sqrt( np.sum( np.abs(img), axis=0) )	
+	return np.squeeze(np.sqrt( np.sum( np.abs(img), axis=0) ))	
 
 
 def  process( fids, ndim=2  ):
@@ -51,4 +52,40 @@ def  process( fids, ndim=2  ):
 	ax = -1*(np.array( range(ndim) )+1)
 	img = np.fft.fftshift( np.fft.ifftn( fids, axes=ax ), axes=ax )
 
-	return img
+	return np.squeeze(img)
+
+def mask_background( img, mask=None, return_mask = False ):
+	"""
+	Utility function for masking MRI images to remove the background.
+
+	Parameters
+	----------
+	img:	     Numpy array containing the CEST data images
+                     Array must be ordered as [ phe2, phe1, npts]
+
+	mask:       opitional mask matrix precuomputed elsewhere. 
+		    Must be same size as a single image.
+		    If not provided the skimage filter 'threshold_li' will be used
+		    To compute the mask. 
+
+	return_mask:  Bool defualt False. Return the mask or the masked image
+		      If True this function returns the binary mask indicating
+		      which pixels are part of the image.
+                      If False this function returns the masked image.   
+
+	Returns
+	-------
+	
+	A masked MRI image or the image mask.
+
+	"""
+	if mask == None:
+		
+		if   len( img.shape ) == 3: t = img[0]
+		elif len( img.shape ) == 2: t = img
+
+		mask = img > filters.threshold_li(t)
+
+	if return_mask: return mask
+
+	else:  return np.ma.MaskedArray( np.multiply( img, mask ) )		

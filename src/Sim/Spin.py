@@ -8,16 +8,8 @@ from numpy import array
 class Spin:
 	"""
 	The representation of a Spin species for a MR Simulator.
-	
-	Constructor: Spin( R1, R2, x0, c, atm='1H' )
 
-	User Callable Member Functions
-	------------------------------
-
-	set_lb_ub( str key, float lower_bound, float upper_bound )
-		Sets lower & upper bounds for fitting functions
-	
-	 	
+	Constructor Spin(R1=0, R2=0, x0=0, c=1, atm='1H')	
 
 	Paramters
 	----------
@@ -28,6 +20,12 @@ class Spin:
 	x0	  : Chemical shift relative to center of spectra. (Units 1.e-6 Hz -- ppm)
 
 	c	  : The concentration or relative amount of signal (Abitrary units)
+
+	atm	  : Name of atom type (string)
+
+
+	Members
+	---------
 
 	history   : An np array descbing the evolution of the magnitization vector durring BlochSim
 		    hisotry[:,0] --> evolution of x magnitzation
@@ -63,10 +61,40 @@ class Spin:
 
 	
 	def set_lb_ub( self, key, lb = None, ub = None ):
+		"""
+		Make a spin paramater optimizable by estabishing upper and lower bonds
+		for the solver.
+
+		Parameters
+		----------
+		key       : String describing the spin member parameter to optimize in fitting
+			    e.g. 'R1', 'R2', 'x0','c' 
+		lb	  : Float -- the lower bound. If -Inf use None			
+		ub        : Float -- the upper bound. If +Inf use None
+
+		Returns
+		-------
+		---None---
+		"""
+
 		if key not in self.__bounds: raise ValueError
 		self.__bounds[key] = ( lb, ub )	
 
 	def get_opt_vals( self ):
+		"""
+		Return a list containg the current values of the 
+		optimizable paramaters for this spin object. 
+
+		Parameters
+		----------
+		---None---
+
+		Returns
+		-------
+		x	: A list of floats containing the current values of the optimizable
+			  paramters.
+		"""
+
 		x = []
 		for key in sorted(self.__bounds):
 			if self.__bounds[key] == None: continue		
@@ -79,6 +107,19 @@ class Spin:
 		return x
 
 	def set_opt_vals( self, vals ):
+		"""
+		Set the 'n' optimizable parameters of this spin object to the first
+		'n' elements in the vals list.
+
+		Parameters
+		----------
+		vals	: A list of floats containg the current parameter values for this spin obj.
+
+		Returns
+		-------
+		---None--		
+		"""
+
 		i=0
 		for key in sorted(self.__bounds):
 			if self.__bounds[key] == None: continue
@@ -93,6 +134,18 @@ class Spin:
 			i+=1
 
 	def get_opt_limits( self ):
+		"""
+		Return a list of tuples descbing the (upper, lower) bounds for each paramter
+		to optimized for this spin object.
+
+		Parameters
+		----------
+		---None---
+				
+		Returns
+		-------
+		list of tuples ( upper_bound, lower_bound) for each fitting paramter		
+		"""
 		bounds=[]
 		for key in sorted(self.__bounds):
 			if self.__bounds[key] != None: bounds.append( self.__bounds[ key ] )
@@ -117,6 +170,8 @@ if __name__ == '__main__':
 	h=Spin(1,1,3.5, 30)
 	
 	h.set_lb_ub( 'R2', 0.0, 200. )
+	h.set_lb_ub( 'x0', 2, 5 )
+
 
 	print h.get_opt_vals()
 	print h.get_opt_limits()

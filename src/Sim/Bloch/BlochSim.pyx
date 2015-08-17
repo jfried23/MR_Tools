@@ -22,17 +22,20 @@ import util.Gamma
 
 
 cdef class BlochSim( object ):
-	cdef float B0
-	cdef tuple spins
+	cdef public float B0
+	cdef public spins
 	cdef np.float_t [:,::1] Rmtx
 
-	def __init__( self, *arg,  B0 = 9.4 ):
-		if not all( isinstance(i, Sim.Spin.Spin) for i in arg): 
-			raise ValueError("A Non-spin object was passed to the BlochSim Constructor!")
-		
-		self.B0      = B0
+	def __init__( self, *arg, **kwargs):
+
+		self.B0      = 9.4	
 		self.spins   = arg
 		self.Rmtx    = np.zeros( (len(arg),len(arg) ) )
+	
+		for k,v in kwargs.items(): 
+			if k == 'B0': self.B0 = v
+			else: raise ValueError
+
 
 	def add_kex(self, int frm, int to, float kex ):
 		cdef float cfct		
