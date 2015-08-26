@@ -4,6 +4,18 @@ from numpy import shape,rollaxis,fft, absolute, zeros_like, ndarray
 import struct
 import numpy as np
 
+def Siemiens_Global_xml( path ):
+
+	binary = open(path, 'rb' )
+	offset, nevps = struct.unpack( '2I', binary.read(struct.calcsize('2I')))
+	s=''
+	for i in range( nevps):
+        	name = _read_cstr(binary)
+		size = struct.unpack( 'I', binary.read(struct.calcsize('I')))
+		s += ''.join(map(chr, struct.unpack( '<%dB'%(size[0]), binary.read(struct.calcsize('<%dB'%(size[0]))))))
+	binary.close()
+	return s
+
 	
 class SiemensReader( FileReader ):
 
@@ -26,9 +38,7 @@ class SiemensReader( FileReader ):
 		for i in range( self.npts ):
 			if self.binary.tell() > self.file_size: break
 			self.binary.seek( self._local_header_sz, 1 )	
-			t = np.fromfile( self.binary, dtype=np.float32, count = self.pts_in_fid*2)
-			fid =  t[0::2] + 1j* t[1::2] 
-			i+=1
+			fid = np.fromfile( self.binary, dtype=np.complex64, count = self.pts_in_fid)
 
 			yield fid
 

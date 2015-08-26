@@ -22,6 +22,30 @@ import util.Gamma
 
 
 cdef class BlochSim( object ):
+	"""
+	BlochSim objects are for preforming a bloch simulation of a pulse sequence.
+	
+	Constructor:  BlochSim( *arg, **kwargs )
+		arg -- 	A variable number of Spin objects to model in the Bloch Sim
+	     kwargs --  'B0' == B, the static magnetic field strength in Tesla. If
+			           not provided B0 = 9.4 T (~400MHz) by default.
+
+	Public Paramters
+	----------------
+	B0	: The static magnetic field strengh of the simulation in Tesla
+
+	spins   : A list of spin objects to be inclded in the simulation
+
+
+	Private Paramters
+	----------------
+	Rmtx	: A square matrix of length == number of spins in the simulation.
+		  Desbribes the mass balanced exchnage rates between spins.
+
+	"""
+
+
+
 	cdef public float B0
 	cdef public spins
 	cdef np.float_t [:,::1] Rmtx
@@ -38,6 +62,14 @@ cdef class BlochSim( object ):
 
 
 	def add_kex(self, int frm, int to, float kex ):
+		"""
+			add_kex( int from, int to, float kex)
+
+			Establish a magnitization exchnage pathway between spin 'from'
+			and spin number 'to' of kex s^-1. 
+			Spin number is 1 indexed, not 0 and determined by the order in which
+			it was inclded in the input args 
+		"""
 		cdef float cfct		
 	
 		frm, to = frm-1, to-1		
@@ -56,6 +88,14 @@ cdef class BlochSim( object ):
 
 	@cython.boundscheck(False) 
 	cpdef np.ndarray[ np.float_t, ndim=2] dM( self, object pulse ):
+		"""
+			dM( PulseElem )
+
+			Takes a PulseElem object and returns a dM matrix descrbing the evolution
+			of the spins in the BlochSim object under the influence of the PulseElem
+
+			returns a square matrix of size n x (Ix Iy Iz) + 1
+		"""
 		cdef int sz, i, ii, x, y, z
 		cdef float w, R1, R2, c		
 		cdef np.ndarray[ np.float_t, ndim=2] dM	
@@ -113,6 +153,16 @@ cdef class BlochSim( object ):
 									
 	@cython.boundscheck(False) 
 	cpdef run( self, object pulseSeq ):
+		"""
+			run( PulseSeq )
+			
+			Runs a Bloch simulation defined by the supplied Pulse sequence.
+			
+			The result of the simulation is receored in the history member of each spin
+			and is returned by this function
+
+		"""
+
 		
 		cdef np.ndarray[ np.float_t, ndim=1]  I0
 		cdef np.ndarray[ np.float_t, ndim=2]  M, I

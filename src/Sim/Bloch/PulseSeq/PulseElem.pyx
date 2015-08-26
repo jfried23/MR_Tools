@@ -15,6 +15,18 @@ Pulse Elements will not incrament unless/untill self.inc() is expliciatly called
 """
 
 cdef class PulseElemBase( object ):
+	"""
+		Constructor:   PulseElemBase( time, B1, offset, phase, atm )
+
+		time   -- durration of the pulse element in units seconds
+		B1     -- strength of transverse B1 field in units Hz --NOT RAD/SEC !!
+		offset -- carrier offset of the B1 pulse in units Hz
+		phase  -- phase of the B1 pulse in units degrees
+		atm    -- string descbing the nucli the pulse is applied to. Defult '1H'
+
+		A general PulseElemnt. Usually Called by one of the dervied classes below.
+	"""
+
 
 	def __init__(self, time_in_s, B1_in_Hz, offset, phase_in_deg, atm='1H' ):
 		
@@ -65,10 +77,27 @@ cdef class PulseElemBase( object ):
 		return pwr * np.array([ math.cos( self.phase ), math.sin( self.phase ) ])
 
 class Delay( PulseElemBase ):
+	"""
+		Constructor:   Delay( time )
+
+		time -- delay in seconds
+
+		Evolve the BlochSim under the effects of B0 alone for durration time.
+	"""
+
 	def __init__(self, time ):		
 		PulseElemBase.__init__(self, time, 0., 0., 0., '1H')
 
 class Acq( Delay ):
+	"""
+		Constructor:   Acq( time = 0.0 )
+		
+		time -- delay in seconds prior to acquistion
+
+		Inserted at the end of a pulse sequence. Signals the simulator to record
+		the state of the spin magnetization before resetting the simulation. If time
+		is not zero will record the spin state after a delay of time. 
+	"""
 	def __init__(self, time = 0.0 ):
 		Delay.__init__(self, time )	
 

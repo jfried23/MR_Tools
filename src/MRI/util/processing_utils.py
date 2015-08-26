@@ -6,6 +6,8 @@ def process_sum_square( fids, ndim=2  ):
 	Utility function for process images from MRI fids and combining the channels
 	using the sum of squares processing; reducing the diemsionality of the data by 1.
 
+	Applies ndim FFT and zero freq shift prior to combining channel data by sum-of-sqaures method.
+
 	Parameters
 	----------
 	fids:	   Numpy array containing the complex fids
@@ -30,7 +32,8 @@ def process_sum_square( fids, ndim=2  ):
 
 def  process( fids, ndim=2  ):
 	"""
-	Utility function for process images from MRI fids.
+	Utility function for process images from MRI fids. 
+        Applies ndim FFT and zero freq shift.
 
 	Parameters
 	----------
@@ -54,38 +57,28 @@ def  process( fids, ndim=2  ):
 
 	return np.squeeze(img)
 
-def mask_background( img, mask=None, return_mask = False ):
+def gen_background_mask( img ):
 	"""
-	Utility function for masking MRI images to remove the background.
+	Utility function for making MRI image masks to remove the background via threshold filter.
 
 	Parameters
 	----------
 	img:	     Numpy array containing the CEST data images
                      Array must be ordered as [ phe2, phe1, npts]
 
-	mask:       opitional mask matrix precuomputed elsewhere. 
-		    Must be same size as a single image.
-		    If not provided the skimage filter 'threshold_li' will be used
-		    To compute the mask. 
-
-	return_mask:  Bool defualt False. Return the mask or the masked image
-		      If True this function returns the binary mask indicating
-		      which pixels are part of the image.
-                      If False this function returns the masked image.   
-
 	Returns
 	-------
 	
-	A masked MRI image or the image mask.
+	A 2D image mask.
 
 	"""
-	if mask == None:
 		
-		if   len( img.shape ) == 3: t = img[0]
-		elif len( img.shape ) == 2: t = img
+	if   len( img.shape ) == 3: t = img[0]
+	elif len( img.shape ) == 2: t = img
 
-		mask = img > filters.threshold_li(t)
+	mask = img > filters.threshold_li(t)
 
-	if return_mask: return mask
+	return mask
 
-	else:  return np.ma.MaskedArray( np.multiply( img, mask ) )		
+def apply_background_mask( mask, img ):
+	return np.ma.MaskedArray( np.multiply( img, mask ) )		
