@@ -3,7 +3,7 @@ sys.path.append('../')
 
 import util.Gamma 
 
-from numpy import array
+import numpy as np
 
 class Spin:
 	"""
@@ -44,9 +44,9 @@ class Spin:
 		self.__c    = float(c)
 		self.__gama  = util.Gamma.gamma_MHz[atm]
 	
-		self.__v    = array( [0.0, 0.0, self.__c], dtype=float )
+		self.__v    = np.array( [0.0, 0.0, self.__c], dtype=float )
 
-		self.__bounds = { 'R1':None, 'R2':None, 'x0':None, c:None }
+		self.__bounds = { 'R1':None, 'R2':None, 'x0':None, 'c':None }
 
 		self.history= None
 
@@ -119,6 +119,8 @@ class Spin:
 		-------
 		---None--		
 		"""
+		
+		if type(vals) == np.ndarray: vals = np.ndarray.tolist( vals )
 
 		i=0
 		for key in sorted(self.__bounds):
@@ -129,9 +131,10 @@ class Spin:
 			elif   key == 'x0': self.__x0 = vals.pop(0)
 			elif   key == 'c' : 
 				self.__c    = vals.pop(0)
-				self.__v    = array( [0.0, 0.0, self.__c], dtype=float )
+				self.__v    = np.array( [0.0, 0.0, self.__c], dtype=float )
 			else: raise ValueError
 			i+=1
+
 
 	def get_opt_limits( self ):
 		"""

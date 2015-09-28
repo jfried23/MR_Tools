@@ -10,11 +10,13 @@ class Lorentzian( object ):
 
 	def __init__( self, *arg, **kwargs  ):
 		self.spins = arg
-		self.B0 = 9.4		
+		self.B0      = 9.4		
 		self.Rmtx    = np.zeros( (len(arg),len(arg) ) )
+		self.ppm     = np.linspace( -8,8,200)
 
 		for k,v in kwargs.items(): 
-			if k == 'B0': self.B0 = v
+			if   k == 'B0' : self.B0  = v
+			elif k == 'ppm': self.ppm = v
 			else: raise ValueError
 
 	def add_kex(self, frm, to, kex ):	
@@ -31,11 +33,11 @@ class Lorentzian( object ):
 		self.Rmtx[frm,frm] = np.sum( self.Rmtx[frm] )
 		self.Rmtx[to, to ] = np.sum( self.Rmtx[to ] )		
 
-	def run( self, ppm_range ):
-		spec = np.zeros_like( ppm_range, dtype='float')
+	def run( self ):
+		spec = np.zeros_like( self.ppm, dtype='float')
 		for i,s in enumerate(self.spins):
 			R2 = s.R2 + self.Rmtx[i,i]
-			spec +=  (1./pi)*(s.v[-1]*R2/( (R2**2) +((ppm_range-s.x0)*s.gamma*self.B0)**2))
+			spec +=  (1./pi)*(s.v[-1]*R2/( (R2**2) +((self.ppm-s.x0)*s.gamma*self.B0)**2))
 		return spec
 
 if __name__ == '__main__':
@@ -47,9 +49,8 @@ if __name__ == '__main__':
 
 	l = Lorentzian( s1, s2, B0=7.0 )
 	l.add_kex(1,2,20)
-	x = np.linspace( -8,8,10000 )
 
 
-	plt.plot( x, l.run(x) )
+	plt.plot( l.ppm, l.run() )
 	plt.show()
 

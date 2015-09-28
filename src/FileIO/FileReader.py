@@ -27,7 +27,7 @@ class FileReader( object ):
 		self.cplx = np.vectorize( complex ) 
 
 		self.file_size = os.path.getsize(path)
-		self.binary = open( path, 'rb')		
+		self.path = path	
 		self.fids = None
 		
 
@@ -112,8 +112,8 @@ class FileReader( object ):
 			if v == True: continue
 			#only sort the complex dimensions
 			
-			r_index = range(0,shp[ax],2)
-			i_index = range(1,shp[ax],2)[::-1]
+			i_index = range(0,shp[ax],2)
+			r_index = range(1,shp[ax],2)[::-1]
 			
 			rls = np.take( self.fids, r_index, axis=ax)
 			ims = np.take( self.fids, i_index, axis=ax)

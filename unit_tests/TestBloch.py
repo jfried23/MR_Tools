@@ -5,11 +5,11 @@ from math import e, pi, cos, sin
 
 import numpy as np
 
-import Sim.Spin  as Spin
+import Sim_cython.Spin  as Spin
 import util.Gamma as Gamma
-import Sim.Bloch.BlochSim as BlochSim
-import Sim.Bloch.PulseSeq.PulseElem as PulseElem
-import Sim.Bloch.PulseSeq.PulseSeq as PulseSeq
+import Sim_cython.Bloch.BlochSim as BlochSim
+import Sim_cython.Bloch.PulseSeq.PulseElem as PulseElem
+import Sim_cython.Bloch.PulseSeq.PulseSeq as PulseSeq
 
 
 class Test_Bloch(unittest.TestCase):
@@ -28,7 +28,8 @@ class Test_Bloch(unittest.TestCase):
 		ps.add( PulseElem.Pulse( 1.e-9, 90., 0.) )
 
 		v = b.run( ps )
-		err = np.linalg.norm( v.T - np.array([ 0.0, -1.0, 0.0, 1.0 ] ) )
+		err = np.linalg.norm( v - np.array([ 0.0, -1.0, 0.0, 1.0 ] ) )
+		print err
 		self.assertAlmostEqual(err, 0, 5)
 
 
@@ -141,7 +142,7 @@ class Test_Bloch(unittest.TestCase):
 		ps.add( PulseElem.Pulse( 10.e-9, 90./8, 180) )
 		
 		M = b.run(ps)
-		err = np.linalg.norm( M.T - np.array([ 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0 ] ) )
+		err = np.linalg.norm( M - np.array([ 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0 ] ) )
 	
 		self.assertAlmostEqual(err, 0.0, 2)
 

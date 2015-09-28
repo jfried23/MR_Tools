@@ -1,26 +1,40 @@
+import sys
+sys.path.insert(0, '/Users/josh/Documents/Programs/MR_Tools/src')
+
 from FileReader import FileReader
 from numpy import shape,rollaxis,fft, absolute, zeros_like, ndarray
 
 import struct
 import numpy as np
 
+import MRI.util.processing_utils as process
+
+def read_siemens( path ):
+	"""
+	Utility function. Takes a path to the MRI raw data and returns the procssed dataset.
+	"""
+	s=(SiemensReader(path)).read()
+	return process.process_sum_square(s)
+
+	
 def Siemiens_Global_xml( path ):
 
 	binary = open(path, 'rb' )
 	offset, nevps = struct.unpack( '2I', binary.read(struct.calcsize('2I')))
-	s=''
+	s=[]
 	for i in range( nevps):
         	name = _read_cstr(binary)
 		size = struct.unpack( 'I', binary.read(struct.calcsize('I')))
-		s += ''.join(map(chr, struct.unpack( '<%dB'%(size[0]), binary.read(struct.calcsize('<%dB'%(size[0]))))))
+		s.append( ''.join(map(chr, struct.unpack( '<%dB'%(size[0]), binary.read(struct.calcsize('<%dB'%(size[0])))))))
 	binary.close()
 	return s
-
 	
 class SiemensReader( FileReader ):
 
 	def __init__(self, path):
 		FileReader.__init__(self, path)
+
+		self.binary = open( self.path, 'r' )
 
 		self._glb_header_sz    = struct.unpack( 'I', self.binary.read(struct.calcsize('I')))[0]
 		self._local_header_sz  = 128
@@ -33,7 +47,7 @@ class SiemensReader( FileReader ):
 
 	def __iter__(self):
 		self.binary.seek( self._glb_header_sz  )
-		fid = np.empty( (self.pts_in_fid ) , dtype=complex )
+		fid = np.empty( (self.pts_in_fid ) , dtype=np.complex64 )
 
 		for i in range( self.npts ):
 			if self.binary.tell() > self.file_size: break
@@ -70,9 +84,8 @@ class SiemensReader( FileReader ):
 		return self.fids
 
 	def read_raw( self ):
-		self.fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=complex )
+		self.fids = np.empty( (self.npts, self.pts_in_fid ) , dtype=np.complex64 )
 		for i,f in enumerate(self): self.fids[i] = f
-		self.binary.close()	
 		return self.fids		
 
 	def guess_shape( self ):
@@ -138,12 +151,24 @@ class SiemensHeaderObj( object ):
 
 		self.is_end             = bool( header[7] & 0x01 )
 
+
+def _read_cstr(source_file):
+	# Reads until it hits a C NULL (0x00), returns the string (without the NULL)
+	chars = [ ]
+	char = source_file.read(1)
+	while char != '\x00':
+		chars.append(char)
+		char = source_file.read(1)
+
+	return ''.join(chars)
+
+
 	
 
 if __name__ == '__main__':
 	from SiemensReader import SiemensReader
 	path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID98_Gre_2D_P_delayGauss_10x720d_185V_st2us_FID25621.dat'
-	#path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID99_Gre_2D_TD_ref_12ms_9d_FID25622.dat'  
+#	path = '/Users/josh/Documents/Data/test_sets/phantum-June10_2014/CEST720/meas_MID99_Gre_2D_TD_ref_12ms_9d_FID25622.dat'  
 
 	
 	import matplotlib.pyplot as plt
@@ -152,12 +177,18 @@ if __name__ == '__main__':
 	import seaborn
 	from skimage import feature
 
-	s = SiemensReader(path)
-	f = s.read()
-	
-	img = abs(fft.fftshift(fft.fft2(f[18,0])))
-	plt.imshow( img, cmap = plt.cm.gray )
+	data = read_siemens( path )
+	print data.shape
+
+	plt.imshow( data[20], cmap = plt.cm.gray )
 	plt.show()
+	#s = SiemensReader(path)
+	#f = s.read()
+	
+	#for one in Siemiens_Global_xml( path ): print one
+	#img = abs(fft.fftshift(fft.fft2(f[18,0])))
+	#plt.imshow( img, cmap = plt.cm.gray )
+	#plt.show()
 	
 
 	#print np.squeeze(f).shape

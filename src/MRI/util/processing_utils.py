@@ -50,11 +50,11 @@ def  process( fids, ndim=2  ):
 	A complex ndarray encoding the images
 
 	"""
-	
 	img = np.empty_like( fids )
 	ax = -1*(np.array( range(ndim) )+1)
-	img = np.fft.fftshift( np.fft.ifftn( fids, axes=ax ), axes=ax )
-
+	
+	img = np.fft.fftshift( np.fft.fftn( fids, axes=ax, ).astype( np.complex64), axes=ax )
+	
 	return np.squeeze(img)
 
 def gen_background_mask( img ):
