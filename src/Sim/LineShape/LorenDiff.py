@@ -25,7 +25,7 @@ class LorenDiff( object ):
 		
 		x0 = self.water.get_opt_vals()
 		x0.append( self.baseline )
-
+		
 		#Setup complete fire up the optimizer!
 		opt = optimize.minimize( self.calc_rmsd, x0, method='Nelder-Mead', options={'maxiter':1e4,'maxfev':1e4} )	
 
@@ -34,6 +34,7 @@ class LorenDiff( object ):
 	def calc_diff( self ): return self.y_cest - (self.lorenz.run() + self.baseline )
 
 	def calc_rmsd( self, x0 ):
+		x0=np.ndarray.tolist( x0 )
 		self.water.set_opt_vals( x0 )
 		self.baseline = x0[-1] 	
 	
