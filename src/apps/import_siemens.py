@@ -2,6 +2,7 @@ import os
 import glob
 import sys
 import time
+import string
 
 _file_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append( os.path.split( _file_path )[0] )
@@ -50,7 +51,7 @@ if __name__ == '__main__':
 	for filename in args.files:
 		try:
 			filepath = _full_path( filename )
-			filename = os.path.split(filepath)[1]
+			filename = string.split(os.path.split(filepath)[1],'.')[0]
 
 			if args.group != None: filename = os.path.join( args.group[0], filename)
 

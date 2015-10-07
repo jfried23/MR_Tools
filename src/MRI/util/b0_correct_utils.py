@@ -37,14 +37,110 @@ def calc_B0_map( wassr_img, wsr_offs, resolution = 1.0 ):
 	return b0_map.reshape( wassr_img.shape[1:] )
 
 
-
-def apply_B0_corr( cest_img, b0_map, cest_offs ):
+def calc_B0_map_umtCEST( umt_imgs, frq_off, resolution = 1 ):
 	"""
-	Apply B0 correction to a CEST dataset using a B0 map generated from WASSR dataset
+	Estimate the B0 map from a uMT CEST dataset 
 
 	Parameters
 	----------
-	cest_img  : 3D numpy array
+	umt_imgs : 3D numpy array
+			The CEST dataset  
+	frq_off  : 1D numpy array
+			The stauration freqencey of each point in dimension 0 (in Hz)
+	resolution: Resampling resolution (Hz)
+
+	Returns
+	-------
+	A B0 map of the 
+
+	"""
+
+	resample_freqs = np.arange( min(frq_off), max(frq_off), resolution, dtype=np.float )
+
+	f = interpolate.interp1d( frq_off, umt_imgs, kind='cubic', axis=0, bounds_error=False, fill_value='NaN')
+	hr = f( resample_freqs  )
+	
+	lh, rh =  hr[0:hr.shape[0]/2], hr[hr.shape[0]/2:]
+
+
+	lmax, rmax = np.argmin(lh, axis=0), np.argmin(rh, axis=0) + len(resample_freqs)/2
+	mid = ((rmax-lmax)/2) + lmax
+
+	b0map = np.zeros_like( umt_imgs[0] )
+
+	for i in range( mid.shape[-2] ):
+		for ii in range( mid.shape[-1]):
+
+			if umt_imgs[0].mask[i,ii]: continue
+			else: b0map[i,ii] = hr[ mid[i,ii], i, ii ]
+
+
+	return np.ma.masked_array( b0_map.reshape, mask = umt_imgs.mask[0] )	
+	
+
+def correct_umt_ret_b0map( imgs, frqs, resolution =1.0 ):
+	"""
+	B0 correct a uMT-CEST dataset and return the estimated b0 map
+
+	Parameters
+	----------
+	imgs : 1D numpy array
+			The CEST spectra  
+	frqs  : 1D numpy array
+			The frequencey offset of each point
+
+	Returns
+	-------
+	A B0 map
+
+	"""
+
+	resample_freqs = np.arange( min(frqs), max(frqs), resolution, dtype=np.float )
+	out = np.zeros_like( imgs )
+
+	f = interpolate.interp1d( frqs, imgs, kind='cubic', axis=0, fill_value=0.0)
+	hr = f( resample_freqs  )
+	
+	lh, rh =  hr[0:hr.shape[0]/2], hr[hr.shape[0]/2:]
+
+	lmax       = np.argmin(lh, axis=0)
+	rmax	   = ((np.argmin(rh, axis=0) + len(resample_freqs)/2))
+
+	mid = np.ma.masked_array( ((rmax-lmax)/2) + lmax, imgs.mask[0] )
+	
+	b0_map = np.zeros_like( imgs[0] )
+
+	for i in range( imgs.shape[-2] ):
+    		for ii in range( imgs.shape[-1] ):
+        		if mid.mask[ i, ii]: continue
+        
+        		offset = resample_freqs[mid[i,ii]]
+			b0_map[i,ii] = offset       			
+ 
+        		left  = frqs > resample_freqs[lmax[i,ii]]
+        		right = frqs < resample_freqs[rmax[i,ii]]
+        
+        		valids = left*right    
+        
+			#Now resample the points
+			floc = interpolate.interp1d( frqs, imgs[:,i,ii], 
+                                    kind='cubic', fill_value='NaN', bounds_error=False)
+
+			imgs[:,i,ii] = floc( frqs - offset )
+
+	return b0_map
+
+
+
+
+
+def apply_B0_corr( imgs, b0_map, cest_offs ):
+	"""
+	Apply B0 correction to a CEST dataset using a B0 map
+
+	Parameters
+	----------
+	imgs         : 3D numpy array
 			The CEST dataset in shape [ #offsets, phase_enc, freq_encode]  
 	b0_map    : 2D numpy array
 			The estimated B0 map in unit Hz. See 'calc_B0_map' for details.
@@ -53,20 +149,16 @@ def apply_B0_corr( cest_img, b0_map, cest_offs ):
 
 	Returns
 	-------
-	cest_b0_corr: 3D numpy array
-			The B0 corrected CEST dataset.
 	"""
-	if len(cest_offs) != cest_img.shape[0]:
+	if len(cest_offs) != imgs.shape[0]:
 		raise IndexError("Input frequencies offsets do not match size of cest_img!") 
 
-	cest_b0_corr = np.empty_like( cest_img )
-
-	for x in range(cest_img.shape[-1]):
-    		for y in range( cest_img.shape[-2]):
-        		f = interpolate.interp1d( cest_offs-b0_map[y,x], cest_img[:,y,x], kind='cubic', bounds_error = False )
-       			cest_b0_corr[:,y,x] = f(cest_offs) 
-		
-	return cest_b0_corr	
+	for i in range( b0_map.shape[-2] ):
+		for ii in range( b0_map.shape[-1] ):
+			if b0_map.mask[ i, ii]: continue
+			f = interpolate.interp1d( cest_offs, imgs[:,i,ii], 
+					kind='cubic', bounds_error=False,  fill_value='NaN')
+			imgs[:,i,ii] =  f( cest_offs - b0_map[i,ii]  )
 
 
 def calib_off_freq( b0_map, cest_offs ):
