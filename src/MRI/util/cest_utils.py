@@ -1,7 +1,7 @@
 import numpy as np
 from scipy import interpolate
 
-def eval_cest_roi( imgs, roi_mask ):
+def eval_cest_roi( imgs, roi_mask, normalize = True ):
 	"""
 	Generate the CEST spectra over a ROI defined in a masked array.
 
@@ -15,13 +15,16 @@ def eval_cest_roi( imgs, roi_mask ):
 	Returns
 	-------
 	CEST spectra for the ROI
-
 	"""
+
 	if imgs.shape[-2:] != roi_mask.shape: raise ValueError
-	return 	(imgs*roi_mask).mean( axis=-2).mean( axis=-1 )
+	v= 	(imgs*roi_mask).mean( axis=-2).mean( axis=-1 )
 
+	if normalize: v = v/np.nanmax(v)
 
-def umt_cest_process( cest, frqs ):
+	return v
+
+def umt_cest_process( frqs, cest, normalize=True ):
 	"""
 	Reorder a uMT-CEST spectra
 
@@ -31,7 +34,6 @@ def umt_cest_process( cest, frqs ):
 			The CEST spectra  
 	frqs  : 1D numpy array
 			The frequencey offset of each point
-
 	Returns
 	-------
 	corrected CEST data
@@ -62,6 +64,8 @@ def umt_cest_process( cest, frqs ):
 	mdpt = cest_umt.size/2
 
 	cest_umt = np.hstack( ( cest_umt[ mdpt: ], cest_umt[ 0:mdpt ] ) )
+
+	if normalize: v = v/np.nanmax(v)
 
 	return frqs[ valids ]-offset, cest_umt
 		

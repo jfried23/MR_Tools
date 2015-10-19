@@ -20,12 +20,12 @@ def calc_B0_map( wassr_img, wsr_offs, resolution = 1.0 ):
 	b0_map: 2D numpy array	
 
 	"""
-	if len(wsr_offs) != wassr_img.shape[0]:
+	if wsr_offs.shape[0] != wassr_img.shape[0]:
 		raise IndexError("Input frequencies offsets do not match size of wassr_img!") 
 
 	if min(wsr_offs) != wsr_offs[0]: wsr_offs = wsr_offs[::-1]
 
-	resample_freqs = np.arange( min(wsr_offs), max(wsr_offs), resolution, dtype=np.float )
+	resample_freqs = np.arange( np.min(wsr_offs), np.max(wsr_offs), resolution, dtype=np.float )
 	
 
 	f = interpolate.interp1d( wsr_offs, wassr_img, kind='cubic', axis=0)
@@ -37,7 +37,7 @@ def calc_B0_map( wassr_img, wsr_offs, resolution = 1.0 ):
 	return b0_map.reshape( wassr_img.shape[1:] )
 
 
-def calc_B0_map_umtCEST( umt_imgs, frq_off, resolution = 1 ):
+def calc_B0_map_umtCEST(  umt_imgs, frq_off, resolution = 1. ):
 	"""
 	Estimate the B0 map from a uMT CEST dataset 
 
@@ -54,10 +54,11 @@ def calc_B0_map_umtCEST( umt_imgs, frq_off, resolution = 1 ):
 	A B0 map of the 
 
 	"""
+	delta = frq_off[1] - frq_off[0]
+	
+	resample_freqs = np.arange( np.min(frq_off), np.max(frq_off), resolution, dtype=np.float )
 
-	resample_freqs = np.arange( min(frq_off), max(frq_off), resolution, dtype=np.float )
-
-	f = interpolate.interp1d( frq_off, umt_imgs, kind='cubic', axis=0, bounds_error=False, fill_value='NaN')
+	f = interpolate.interp1d( frq_off, umt_imgs, kind='cubic', axis=0, bounds_error=False)
 	hr = f( resample_freqs  )
 	
 	lh, rh =  hr[0:hr.shape[0]/2], hr[hr.shape[0]/2:]
@@ -75,7 +76,7 @@ def calc_B0_map_umtCEST( umt_imgs, frq_off, resolution = 1 ):
 			else: b0map[i,ii] = hr[ mid[i,ii], i, ii ]
 
 
-	return np.ma.masked_array( b0_map.reshape, mask = umt_imgs.mask[0] )	
+	return np.ma.masked_array( b0map, mask = umt_imgs.mask[0] )	
 	
 
 def correct_umt_ret_b0map( imgs, frqs, resolution =1.0 ):
