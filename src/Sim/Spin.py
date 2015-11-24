@@ -5,8 +5,6 @@ import util.Gamma
 
 import numpy as np
 
-import Sim.LineShape.Shapes 
-
 class Spin:
 	"""
 	The representation of a Spin species for a MR Simulator.
@@ -52,7 +50,6 @@ class Spin:
 
 		self.history= None
 
-		self.lineshape = Sim.LineShape.Shapes.Lorentzian
 
 	def __str__( self ):
 		s  = 'Spin object:\n' 	
@@ -171,15 +168,6 @@ class Spin:
 	def c( self )  : return self.__c
 	@property
 	def gamma(self): return self.__gama
-
-	#setters
-	def set_val( self, key, val ):
-		if   key == 'R1': self.__R1 = val
-		elif key == 'R2': self.__R2 = val
-		elif key == 'x0': self.__x0 = val
-		elif key == 'c' : self.__c  = val
-		elif key == 'v' : self.__v  = val*self.__c
-		else: raise ValueError( "Attempted to set unrecognized key %s" % (key) )
 
 if __name__ == '__main__':
 	h=Spin(1,1,3.5, 30)

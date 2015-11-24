@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from skimage import feature, segmentation, filters
+from skimage import feature, segmentation
 from scipy import ndimage as ndi
 
 
@@ -22,7 +22,7 @@ class foreground( object ):
 class skull_strip( object ):
 	def __init__(self): pass
 
-	def getMask( self, img, sigma=0.8 ):
+	def getMask( self, img. sigma=0.8 ):
 		f = foreground()
 		edges = feature.canny(f.getMask(img), sigma=sigma)	
 		return ndi.binary_fill_holes(edges)
@@ -67,19 +67,18 @@ if __name__ == '__main__':
 	#np.ma.make_mask( msk )
 
 	"""
-	ss = skull_strip()
 
-	#from skimage import feature, segmentation
-	#from scipy import ndimage as ndi
+	from skimage import feature, segmentation
+	from scipy import ndimage as ndi
 
-	#ROI1 = foreground()
+	ROI1 = foreground()
 	
-	#edges2 = feature.canny(ROI1.getMask(img), sigma=0.5)	
+	edges2 = feature.canny(ROI1.getMask(img), sigma=0.5)	
 	#edges2 = segmentation.find_boundaries( ROI1.getMask(img) )
 
 
-	#fill_brain = ndi.binary_fill_holes(edges2)
+	fill_brain = ndi.binary_fill_holes(edges2)
 
 	plt.imshow( img, cmap=plt.cm.binary) 
-	plt.imshow( np.ma.masked_equal( ss.getMask(img)*img, 0) )
+	plt.imshow( np.ma.masked_equal( fill_brain*img, 0) )
 	plt.show()

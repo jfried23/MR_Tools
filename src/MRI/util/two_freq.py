@@ -4,7 +4,7 @@ from scipy import interpolate
 import matplotlib.pyplot as plt
 
 
-def order_umt_cest( cest, frqs, show=False ):
+def order_umt_cest( cest, frqs ):
 	"""
 	Reorder a uMT-CEST spectra
 
@@ -14,9 +14,6 @@ def order_umt_cest( cest, frqs, show=False ):
 			The CEST spectra  
 	frqs  : 1D numpy array
 			The frequencey offset of each point
-
-	show  : Bool Default False
-			Display the fit of the umt processing
 
 	Returns
 	-------
@@ -33,12 +30,11 @@ def order_umt_cest( cest, frqs, show=False ):
 	mid = ((rmax-lmax)/2) + lmax
 	
 	offset = resample_freqs[ mid ]
-
-
+	
 	#Now find the points in between these two limits
 	left  = frqs > resample_freqs[lmax]
 	right = frqs < resample_freqs[rmax]
-	
+
 	valids = np.multiply( left, right )
 
 	cest_umt = cest[ valids ]
@@ -50,25 +46,25 @@ def order_umt_cest( cest, frqs, show=False ):
 
 	cest_umt = np.hstack( ( cest_umt[ mdpt: ], cest_umt[ 0:mdpt ] ) )
 
-	if show:
-		plt.subplot(211)
-		plt.plot( frqs, cest, 'ko')
-		plt.plot( resample_freqs, hr,'b')
+	"""
+	plt.subplot(211)
+	plt.plot( frqs, cest, 'ko')
+	plt.plot( resample_freqs, hr,'b')
 	
-		plt.axvline( resample_freqs[rmax], color='r' )
-		plt.axvline( resample_freqs[lmax], color='r' )
-		plt.axvline( resample_freqs[mid], color='r' )
+	plt.axvline( resample_freqs[rmax], color='r' )
+	plt.axvline( resample_freqs[lmax], color='r' )
+	plt.axvline( resample_freqs[mid], color='r' )
 
-		plt.subplot(212)
-		frq2 = np.hstack( ( resample_freqs[lmax:mid], resample_freqs[mid:rmax] ) )
-		spec = np.hstack( (  hr[mid:rmax], hr[lmax:mid] ) )
+	plt.subplot(212)
+	frq2 = np.hstack( ( resample_freqs[lmax:mid], resample_freqs[mid:rmax] ) )
+	spec = np.hstack( (  hr[mid:rmax], hr[lmax:mid] ) )
 	
-		plt.plot( (frqs[ valids ]-offset)/300, cest_umt, 'o' )
-		plt.plot( (frq2-offset)/300, spec )
+	plt.plot( (frqs[ valids ]-offset)/300, cest_umt, 'o' )
+	plt.plot( (frq2-offset)/300, spec )
 
 		
-		plt.show()	
-
+	plt.show()	
+	"""
 	return frqs[ valids ]-offset, cest_umt
 
 

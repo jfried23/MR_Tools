@@ -10,7 +10,7 @@ from matplotlib.widgets import Slider, Button, RadioButtons
 from DiscreteSlider import DiscreteSlider
 
 import sys
-sys.path.insert(0, '../../../')
+sys.path.insert(0, '../FileIO/')
 
 
 class MRI( object ):
@@ -46,6 +46,8 @@ class MRI( object ):
 		ax.set_xticks( [] )
 		ax.set_yticks( [] )
 		
+		
+			
 
 	def _sel_data_set(self, lable ):
 		self._curent_indx = self._radio_dic[ lable ]
