@@ -9,13 +9,22 @@ import numpy as np
 
 import MRI.util.processing_utils as process
 
-def read_siemens( path ):
+def read_siemens( path, ovr = False ):
 	"""
 	Utility function. Takes a path to the MRI raw data and returns the procssed dataset.
-	"""
-	s=(SiemensReader(path)).read()
-	return process.process_sum_square(s)
+	If ovr == True: assumes oversampling is used in readout dimension.
+	"""	
+	s=SiemensReader(path)
+	if ovr:
+		sz, isr = s.guess_shape()
+		sz[0] = sz[0]*2
+		sz[1] = sz[1]/2
+		v = s.read( shp = sz, isr = isr )
+	else: v=(SiemensReader(path)).read()
 
+	return process.process_sum_square(v)
+	
+	
 	
 def Siemiens_Global_xml( path ):
 
@@ -97,7 +106,7 @@ class SiemensReader( FileReader ):
 		chns     =  self.hdr.used_channels
 		k2       =  self.npts/(chns*k1)
 	
-		
+		#print "k0: %i, k1: %i, chns: %i, k2: %i" % (k0, k1, chns, k2)	
 		assert k1 * chns * k2 == self.npts 
 		
 		shape  = np.array([ k2, k1, chns, k0 ],dtype=int)

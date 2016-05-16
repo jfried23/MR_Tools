@@ -31,6 +31,8 @@ if __name__ == '__main__':
 	parser.add_argument('-d','--dataset', nargs=1, default=None,
 			    help='Path to an exisiting hdf5 repository.')
 
+	parser.add_argument('-o','--overSample', nargs=1, default=True,
+			    help='Dataset collected using 2x oversampling in readout dim.')
 
 	
 	args = parser.parse_args()
@@ -55,7 +57,7 @@ if __name__ == '__main__':
 
 			if args.group != None: filename = os.path.join( args.group[0], filename)
 
-			data = FileIO.SiemensReader.read_siemens( filepath )
+			data = FileIO.SiemensReader.read_siemens( filepath, ovr = args.overSample )
 
 			hdf5.create_dataset( filename, data=data, shuffle=True, 
                                           	chunks=True, compression='gzip' )
