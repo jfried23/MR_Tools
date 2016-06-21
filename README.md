@@ -7,4 +7,4 @@ The package contains functionality for:
   
   2)MRI   -- contains tools for manipulating MRI images, masking / seqmenting images and selecting regions on intrest. Supports MRI - spectroscopy research workflow.
   
-  3)SIM  -- is a python package for preforming Bloch Mcconnell spin-physics based simulations of MRI pulse sequences. Contains functionality for chaining the physcs based simulations to constrained nonlinear least squares optimizers in scipy and fitting experimental MRI data. Heavy numerical calculations are done in Numpy and Cython for speed. (Run setup.py in the main directory to compile the cython code before use). Unit tests exists for this package. 
+  3)SIM  -- is a python package for preforming Bloch Mcconnell spin-physics based simulations of MRI pulse sequences. Contains functionality for chaining the physcs based simulations to constrained nonlinear least squares optimizers in scipy and fitting experimental MRI data. Heavy numerical calculations are done in Numpy and Cython for speed. (Run the command python setup.py build_ext --inplace to compile the cython code before use). Unit tests exists for this package. 
